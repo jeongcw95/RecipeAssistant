@@ -1,46 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\CH\\Desktop\\3-1\\anpr\\RecipeAssistant\\RecipeAssistant\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
+            "outputFile": "C:\\Users\\LG\\Desktop\\moblie\\RecipeAssistant\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\CH\\Desktop\\3-1\\anpr\\RecipeAssistant\\RecipeAssistant\\Application\\src\\main\\res\\values-v21\\base-template-styles.xml",
-                    "from": {
-                        "startLines": "20",
-                        "startColumns": "4",
-                        "startOffsets": "677",
-                        "endColumns": "71",
-                        "endOffsets": "744"
-                    },
-                    "to": {
-                        "startLines": "6",
-                        "startColumns": "4",
-                        "startOffsets": "354",
-                        "endColumns": "71",
-                        "endOffsets": "421"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\CH\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\6073431c26d12064b52a60c4c262b5bd\\res\\values-v21\\values-v21.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,13",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,159,223,290,354,470,596,722,850,1022",
-                        "endLines": "2,3,4,5,6,7,8,9,12,17",
-                        "endColumns": "103,63,66,63,115,125,125,127,12,12",
-                        "endOffsets": "154,218,285,349,465,591,717,845,1017,1355"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,264,265,272,276,280,283",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,159,223,290,19337,19453,19910,20204,20499,20671",
-                        "endLines": "2,3,4,5,264,265,272,276,282,287",
-                        "endColumns": "103,63,66,63,115,125,125,127,12,12",
-                        "endOffsets": "154,218,285,349,19448,19574,20031,20327,20666,21004"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\CH\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\dd508131eb29e71cb1a9a5e945a0ed65\\res\\values-v21\\values-v21.xml",
+                    "source": "C:\\Users\\LG\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\371654e07964f02a64c088d75c82c1d9\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,17,19,20,21,22,24,26,27,28,29,30,32,34,36,38,40,42,43,48,50,52,53,54,56,58,59,60,61,62,63,107,110,154,157,160,162,164,166,169,171,174,175,176,179,180,181,182,183,184,187,188,190,192,194,196,200,202,203,204,205,207,211,213,215,216,217,218,219,221,222,223,233,234,235,247",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -59,7 +23,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\CH\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.0.2.aar\\f903db1a77153c49defbf96ee4dda13a\\res\\values-v21\\values-v21.xml",
+                    "source": "C:\\Users\\LG\\Desktop\\moblie\\RecipeAssistant\\Application\\src\\main\\res\\values-v21\\base-template-styles.xml",
+                    "from": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "697",
+                        "endColumns": "71",
+                        "endOffsets": "764"
+                    },
+                    "to": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "354",
+                        "endColumns": "71",
+                        "endOffsets": "421"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\LG\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.0.2.aar\\6cdef75baba57a29d457b291489dd115\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,5,8,11",
                         "startColumns": "4,4,4,4",
@@ -75,6 +56,25 @@
                         "endLines": "268,271,275,279",
                         "endColumns": "12,12,12,12",
                         "endOffsets": "19742,19905,20199,20494"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\LG\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\10d769dba82dba91b68c00367e245a3a\\res\\values-v21\\values-v21.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,13",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,159,223,290,354,470,596,722,850,1022",
+                        "endLines": "2,3,4,5,6,7,8,9,12,17",
+                        "endColumns": "103,63,66,63,115,125,125,127,12,12",
+                        "endOffsets": "154,218,285,349,465,591,717,845,1017,1355"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,264,265,272,276,280,283",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,159,223,290,19337,19453,19910,20204,20499,20671",
+                        "endLines": "2,3,4,5,264,265,272,276,282,287",
+                        "endColumns": "103,63,66,63,115,125,125,127,12,12",
+                        "endOffsets": "154,218,285,349,19448,19574,20031,20327,20666,21004"
                     }
                 }
             ]

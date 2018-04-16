@@ -35,6 +35,31 @@ public class Recipe {
     public String recipeImage;
     public String ingredientsText;
 
+    public String getTitleText() {
+        return titleText;
+    }
+
+    public void setTitleText(String titleText) {
+        this.titleText = titleText;
+    }
+
+    public String getSummaryText() {
+        return summaryText;
+    }
+
+    public void setSummaryText(String summaryText) {
+        this.summaryText = summaryText;
+    }
+
+    public String getIngredientsText() {
+        return ingredientsText;
+    }
+
+    public void setIngredientsText(String ingredientsText) {
+        this.ingredientsText = ingredientsText;
+    }
+
+
     public static class RecipeStep {
         RecipeStep() { }
         public String stepImage;

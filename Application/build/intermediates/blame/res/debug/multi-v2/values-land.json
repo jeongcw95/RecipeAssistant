@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\CH\\Desktop\\3-1\\anpr\\RecipeAssistant\\RecipeAssistant\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
+            "outputFile": "C:\\Users\\LG\\Desktop\\moblie\\RecipeAssistant\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\CH\\.gradle\\caches\\transforms-1\\files-1.1\\design-23.4.0.aar\\4d5bd5b5e6001d7279b738475f5c87dc\\res\\values-land\\values-land.xml",
+                    "source": "C:\\Users\\LG\\.gradle\\caches\\transforms-1\\files-1.1\\design-23.4.0.aar\\c831e6a859d9ea98b56639aa89d495ff\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\CH\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\dd508131eb29e71cb1a9a5e945a0ed65\\res\\values-land\\values-land.xml",
+                    "source": "C:\\Users\\LG\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\371654e07964f02a64c088d75c82c1d9\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
