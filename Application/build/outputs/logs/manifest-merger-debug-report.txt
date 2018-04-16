@@ -1,0 +1,164 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:16:1-81:12
+MERGED from [com.baoyz.swipemenulistview:library:1.3.0] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\library-1.3.0.aar\e642bf43a65626fc741b972f95717d98\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.volley:volley:1.0.0] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\volley-1.0.0.aar\315eedf285933b27ffc6f7d1bdf07597\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:design:23.4.0] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\design-23.4.0.aar\4d5bd5b5e6001d7279b738475f5c87dc\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:27.0.2] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.0.2.aar\dd508131eb29e71cb1a9a5e945a0ed65\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:27.0.2] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.0.2.aar\ffee1300525e961260ee28dad95b9282\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-v13:27.0.2] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\support-v13-27.0.2.aar\ca7b89b051d3968b0a8d795a294830bd\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:23.4.0] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-23.4.0.aar\c93e51ebaabbd0c9815c8cbad3126361\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-v4:27.0.2] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.2.aar\5efb0aee9be575c04138ca1bc288d587\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\ed346569a703ea61ee1316b665856097\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.2.aar\e31c975ef2849a3360ed3c589236a213\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.2.aar\cd4d54e7fd549164cde2c5c526571c70\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.0.2.aar\35ef6d92e6d5bf357f1ec80769589760\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.0.2] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.0.2.aar\77ae88079570a0c5e26701b4ac8c067a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.0.2] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.2.aar\098db9b42a18cf65145ae54431959850\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.0.2] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.0.2.aar\f903db1a77153c49defbf96ee4dda13a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.0.2] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.2.aar\6073431c26d12064b52a60c4c262b5bd\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\61cdc4aa0dccb197a6813075c480b841\AndroidManifest.xml:17:1-24:12
+	package
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:17:5-59
+	xmlns:android
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:16:11-69
+uses-sdk
+ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:19:5-21:41
+INJECTED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:19:5-21:41
+INJECTED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:19:5-21:41
+MERGED from [com.baoyz.swipemenulistview:library:1.3.0] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\library-1.3.0.aar\e642bf43a65626fc741b972f95717d98\AndroidManifest.xml:7:5-9:41
+MERGED from [com.baoyz.swipemenulistview:library:1.3.0] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\library-1.3.0.aar\e642bf43a65626fc741b972f95717d98\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.volley:volley:1.0.0] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\volley-1.0.0.aar\315eedf285933b27ffc6f7d1bdf07597\AndroidManifest.xml:7:5-43
+MERGED from [com.android.volley:volley:1.0.0] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\volley-1.0.0.aar\315eedf285933b27ffc6f7d1bdf07597\AndroidManifest.xml:7:5-43
+MERGED from [com.android.support:design:23.4.0] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\design-23.4.0.aar\4d5bd5b5e6001d7279b738475f5c87dc\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:design:23.4.0] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\design-23.4.0.aar\4d5bd5b5e6001d7279b738475f5c87dc\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:27.0.2] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.0.2.aar\dd508131eb29e71cb1a9a5e945a0ed65\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.0.2] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.0.2.aar\dd508131eb29e71cb1a9a5e945a0ed65\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.0.2] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.0.2.aar\ffee1300525e961260ee28dad95b9282\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.0.2] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.0.2.aar\ffee1300525e961260ee28dad95b9282\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v13:27.0.2] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\support-v13-27.0.2.aar\ca7b89b051d3968b0a8d795a294830bd\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v13:27.0.2] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\support-v13-27.0.2.aar\ca7b89b051d3968b0a8d795a294830bd\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:23.4.0] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-23.4.0.aar\c93e51ebaabbd0c9815c8cbad3126361\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:23.4.0] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-23.4.0.aar\c93e51ebaabbd0c9815c8cbad3126361\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:27.0.2] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.2.aar\5efb0aee9be575c04138ca1bc288d587\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.0.2] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.2.aar\5efb0aee9be575c04138ca1bc288d587\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\ed346569a703ea61ee1316b665856097\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\ed346569a703ea61ee1316b665856097\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.2.aar\e31c975ef2849a3360ed3c589236a213\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.2.aar\e31c975ef2849a3360ed3c589236a213\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.2.aar\cd4d54e7fd549164cde2c5c526571c70\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.2.aar\cd4d54e7fd549164cde2c5c526571c70\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.0.2.aar\35ef6d92e6d5bf357f1ec80769589760\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.0.2.aar\35ef6d92e6d5bf357f1ec80769589760\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.2] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.0.2.aar\77ae88079570a0c5e26701b4ac8c067a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.2] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.0.2.aar\77ae88079570a0c5e26701b4ac8c067a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.2] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.2.aar\098db9b42a18cf65145ae54431959850\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.2] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.2.aar\098db9b42a18cf65145ae54431959850\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.0.2] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.0.2.aar\f903db1a77153c49defbf96ee4dda13a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.0.2] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.0.2.aar\f903db1a77153c49defbf96ee4dda13a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.2] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.2.aar\6073431c26d12064b52a60c4c262b5bd\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.2] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.2.aar\6073431c26d12064b52a60c4c262b5bd\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\61cdc4aa0dccb197a6813075c480b841\AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\61cdc4aa0dccb197a6813075c480b841\AndroidManifest.xml:20:5-22:41
+INJECTED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:19:5-21:41
+INJECTED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:19:5-21:41
+	android:targetSdkVersion
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:21:9-38
+		INJECTED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:20:9-35
+		INJECTED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:23:5-81
+	android:name
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:23:22-78
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:24:5-75
+	android:name
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:24:22-72
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:25:5-80
+	android:name
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:25:22-77
+application
+ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:27:5-79:19
+MERGED from [com.android.volley:volley:1.0.0] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\volley-1.0.0.aar\315eedf285933b27ffc6f7d1bdf07597\AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.0.0] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\volley-1.0.0.aar\315eedf285933b27ffc6f7d1bdf07597\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:design:23.4.0] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\design-23.4.0.aar\4d5bd5b5e6001d7279b738475f5c87dc\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:23.4.0] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\design-23.4.0.aar\4d5bd5b5e6001d7279b738475f5c87dc\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\ed346569a703ea61ee1316b665856097\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\CH\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\ed346569a703ea61ee1316b665856097\AndroidManifest.xml:9:5-20
+	android:supportsRtl
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:32:9-35
+	android:label
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:30:9-41
+	android:icon
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:29:9-45
+	android:allowBackup
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:28:9-35
+	android:theme
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:31:9-40
+activity#com.example.android.wearable.recipeassistant.LoginActivity
+ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:33:9-41:20
+	android:screenOrientation
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:35:13-49
+	android:name
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:34:13-42
+activity#com.example.android.wearable.recipeassistant.RegisterActivity
+ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:42:9-44:52
+	android:screenOrientation
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:44:13-49
+	android:name
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:43:13-45
+activity#com.example.android.wearable.recipeassistant.UsersListActivity
+ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:45:9-47:52
+	android:screenOrientation
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:47:13-49
+	android:name
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:46:13-46
+activity#com.example.android.wearable.recipeassistant.MainPage
+ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:54:9-57:20
+	android:theme
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:56:13-72
+	android:name
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:55:13-37
+activity#com.example.android.wearable.recipeassistant.Splash
+ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:58:9-66:20
+	android:theme
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:60:13-47
+	android:name
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:59:13-35
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:61:13-65:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:62:17-69
+	android:name
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:62:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:64:17-77
+	android:name
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:64:27-74
+activity#com.example.android.wearable.recipeassistant.MainActivity
+ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:67:9-70:16
+	android:label
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:69:13-45
+	android:name
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:68:13-41
+activity#com.example.android.wearable.recipeassistant.RecipeActivity
+ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:71:9-74:62
+	android:label
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:73:13-45
+	android:theme
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:74:13-60
+	android:name
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:72:13-43
+activity#com.example.android.wearable.recipeassistant.Favorite
+ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:75:9-78:62
+	android:label
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:77:13-33
+	android:theme
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:78:13-60
+	android:name
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:76:13-37
