@@ -51,6 +51,12 @@
             android:name="com.example.android.wearable.recipeassistant.UsersListActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name="com.example.android.wearable.recipeassistant.RecipeRegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.example.android.wearable.recipeassistant.RecipeListActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name="com.example.android.wearable.recipeassistant.MainPage"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
         </activity>

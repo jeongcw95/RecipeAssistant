@@ -11,7 +11,6 @@ import android.support.v7.widget.AppCompatTextView;
 import android.view.View;
 
 
-
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
     private final AppCompatActivity activity = RegisterActivity.this;

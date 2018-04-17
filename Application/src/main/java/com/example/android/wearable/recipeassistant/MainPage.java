@@ -17,12 +17,12 @@ public class MainPage extends Activity {
         }
 
     public void StartButtonClicked(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, RecipeListActivity.class);
         startActivity(intent);
     }
 
     public void FavoriteButtonClicked(View view) {
-        Intent intent = new Intent(this, Favorite.class);
+        Intent intent = new Intent(this, RecipeRegisterActivity.class);
         startActivity(intent);
     }
 }

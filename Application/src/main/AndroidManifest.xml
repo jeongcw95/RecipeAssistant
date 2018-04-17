@@ -45,6 +45,13 @@
         <activity
             android:name=".UsersListActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".RecipeRegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RecipeListActivity"
+            android:screenOrientation="portrait" />
+
 
 
 

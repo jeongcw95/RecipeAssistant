@@ -29,7 +29,7 @@ public class MainActivity extends ListActivity {
 
     private static final String TAG = "RecipeAssistant";
     protected RecipeListAdapter mAdapter;
-
+    private databaseHelper databasehelper;
      @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
         if (Log.isLoggable(TAG, Log.DEBUG)) {
@@ -39,7 +39,8 @@ public class MainActivity extends ListActivity {
         Intent intent = new Intent(getApplicationContext(), RecipeActivity.class);
         intent.putExtra(Constants.RECIPE_NAME_TO_LOAD, itemName);
         startActivity(intent);
-    }
+
+     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

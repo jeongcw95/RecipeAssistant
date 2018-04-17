@@ -6,8 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.example.android.wearable.recipeassistant.User;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,17 +15,18 @@ public class databaseHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     // Database Name
-    private static final String DATABASE_NAME = "UserManager.db";
+    private static final String DATABASE_NAME = "RecipeAssistant.db";
 
     // User table name
     private static final String TABLE_USER = "user";
-    private static final String TABLE_RECIPE = "recipe";
     // User Table Columns names
     private static final String COLUMN_USER_ID = "user_id";
     private static final String COLUMN_USER_NAME = "user_name";
     private static final String COLUMN_USER_EMAIL = "user_email";
     private static final String COLUMN_USER_PASSWORD = "user_password";
 
+
+    private static final String TABLE_RECIPE = "recipe";
     private static final String COLUMN_RECIPE_TITLE = "recipe_title";
     private static final String COLUMN_RECIPE_SUMMARY = "recipe_summary";
     private static final String COLUMN_RECIPE_INGREDIENTS = "recipe_ingredients";
@@ -98,9 +97,10 @@ public class databaseHelper extends SQLiteOpenHelper {
         values.put(COLUMN_RECIPE_TITLE, recipe.getTitleText());
         values.put(COLUMN_RECIPE_SUMMARY, recipe.getSummaryText());
         values.put(COLUMN_RECIPE_INGREDIENTS, recipe.getIngredientsText());
+        values.put(COLUMN_RECIPE_STEP, recipe.getSteps());
 
         // Inserting Row
-        db.insert(TABLE_USER, null, values);
+        db.insert(TABLE_RECIPE, null, values);
         db.close();
     }
     /**
@@ -194,6 +194,7 @@ public class databaseHelper extends SQLiteOpenHelper {
                 recipe.setTitleText(cursor.getString(cursor.getColumnIndex(COLUMN_RECIPE_TITLE)));
                 recipe.setSummaryText(cursor.getString(cursor.getColumnIndex(COLUMN_RECIPE_SUMMARY)));
                 recipe.setIngredientsText(cursor.getString(cursor.getColumnIndex(COLUMN_RECIPE_INGREDIENTS)));
+                recipe.setSteps(cursor.getString(cursor.getColumnIndex(COLUMN_RECIPE_STEP)));
 
                 // Adding user record to list
                 recipeList.add(recipe);
@@ -228,8 +229,10 @@ public class databaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
+        values.put(COLUMN_RECIPE_TITLE, recipe.getTitleText());
         values.put(COLUMN_RECIPE_SUMMARY, recipe.getSummaryText());
         values.put(COLUMN_RECIPE_INGREDIENTS, recipe.getIngredientsText());
+        values.put(COLUMN_RECIPE_STEP, recipe.getSteps());
 
         // updating row
         db.update(TABLE_RECIPE, values, COLUMN_RECIPE_TITLE + " = ?",
@@ -339,6 +342,43 @@ public class databaseHelper extends SQLiteOpenHelper {
 
         cursor.close();
         db.close();
+        if (cursorCount > 0) {
+            return true;
+        }
+
+        return false;
+    }
+    public boolean checkRecipe(String title) {
+
+        // array of columns to fetch
+        String[] columns = {
+                COLUMN_RECIPE_TITLE
+        };
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        // selection criteria
+        String selection = COLUMN_RECIPE_TITLE + " = ?";
+
+        // selection argument
+        String[] selectionArgs = {title};
+
+        // query user table with condition
+        /**
+         * Here query function is used to fetch records from user table this function works like we use sql query.
+         * SQL query equivalent to this query function is
+         * SELECT user_id FROM user WHERE user_email = 'jack@androidtutorialshub.com';
+         */
+        Cursor cursor = db.query(TABLE_RECIPE, //Table to query
+                columns,                    //columns to return
+                selection,                  //columns for the WHERE clause
+                selectionArgs,              //The values for the WHERE clause
+                null,                       //group the rows
+                null,                      //filter by row groups
+                null);                      //The sort order
+        int cursorCount = cursor.getCount();
+        cursor.close();
+        db.close();
+
         if (cursorCount > 0) {
             return true;
         }

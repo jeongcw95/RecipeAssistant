@@ -14,14 +14,14 @@
         <android.support.v7.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/text_title"
+            android:text="Current All Users"
             android:textSize="20sp" />
 
         <android.support.v7.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="@string/text_hello" />
+            android:text="include DATA" />
 
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/textViewName"

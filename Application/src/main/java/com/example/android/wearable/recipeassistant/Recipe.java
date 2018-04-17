@@ -34,6 +34,7 @@ public class Recipe {
     public String summaryText;
     public String recipeImage;
     public String ingredientsText;
+    public String steps;
 
     public String getTitleText() {
         return titleText;
@@ -57,6 +58,14 @@ public class Recipe {
 
     public void setIngredientsText(String ingredientsText) {
         this.ingredientsText = ingredientsText;
+    }
+
+    public String getSteps() {
+        return steps;
+    }
+
+    public void setSteps(String titleText) {
+        this.steps = steps;
     }
 
 

@@ -36,7 +36,7 @@ import java.util.List;
 
 public class RecipeListAdapter implements ListAdapter {
     private String TAG = "RecipeListAdapter";
-
+    private databaseHelper databaseHelper;
     private class Item {
         String title;
         String name;
@@ -59,6 +59,7 @@ public class RecipeListAdapter implements ListAdapter {
             List<Item> items = parseJson(jsonObject);
             appendItemsToList(items);
         }
+//          databaseHelper.getAllRecipe();
     }
 
     private List<Item> parseJson(JSONObject json) {

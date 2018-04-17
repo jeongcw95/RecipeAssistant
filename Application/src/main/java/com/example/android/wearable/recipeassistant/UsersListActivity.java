@@ -25,12 +25,10 @@ public class UsersListActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_users_list);
-        getSupportActionBar().setTitle("");
+        //getSupportActionBar().setTitle("");
         initViews();
         initObjects();
-
     }
-
     /**
      * This method is to initialize views
      */
@@ -38,7 +36,6 @@ public class UsersListActivity extends AppCompatActivity {
         textViewName = (AppCompatTextView) findViewById(R.id.textViewName);
         recyclerViewUsers = (RecyclerView) findViewById(R.id.recyclerViewUsers);
     }
-
     /**
      * This method is to initialize objects to be used
      */
