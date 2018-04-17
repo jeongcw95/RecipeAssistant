@@ -56,6 +56,4 @@ public class UsersRecyclerAdapter extends RecyclerView.Adapter<UsersRecyclerAdap
             textViewPassword = (AppCompatTextView) view.findViewById(R.id.textViewPassword);
         }
     }
-
-
 }
