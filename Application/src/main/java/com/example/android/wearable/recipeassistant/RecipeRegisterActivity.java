@@ -1,14 +1,12 @@
 package com.example.android.wearable.recipeassistant;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
 import android.view.View;
-
 
 
 public class RecipeRegisterActivity extends AppCompatActivity implements View.OnClickListener {
@@ -30,7 +28,7 @@ public class RecipeRegisterActivity extends AppCompatActivity implements View.On
     private AppCompatButton appCompatButtonRecipeRegister;
 
     private InputValidation inputValidation;
-    private databaseHelper databaseHelper;
+    private com.example.android.wearable.recipeassistant.databaseHelper databaseHelper;
     private Recipe recipe;
 
     @Override

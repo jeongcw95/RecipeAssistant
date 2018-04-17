@@ -25,17 +25,17 @@ public class RecipeListActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_list);
-        initObjects();
+        //getSupportActionBar().setTitle("");
         initViews();
+        initObjects();
     }
-
     /**
      * This method is to initialize views
      */
     private void initViews() {
+        textViewName = (AppCompatTextView) findViewById(R.id.textViewName);
         recyclerViewRecipe = (RecyclerView) findViewById(R.id.recyclerViewRecipe);
     }
-
     /**
      * This method is to initialize objects to be used
      */
@@ -50,8 +50,8 @@ public class RecipeListActivity extends AppCompatActivity {
         recyclerViewRecipe.setAdapter(recipeRecyclerAdapter);
         databaseHelper = new databaseHelper(activity);
 
-//        String TitleFromIntent = getIntent().getStringExtra("TITLE");
-//        textViewName.setText(TitleFromIntent);
+//        String titleFromIntent = getIntent().getStringExtra("TITLE");
+//        textViewName.setText(titleFromIntent);
 
         getDataFromSQLite();
     }
@@ -66,8 +66,10 @@ public class RecipeListActivity extends AppCompatActivity {
             protected Void doInBackground(Void... params) {
                 listRecipe.clear();
                 listRecipe.addAll(databaseHelper.getAllRecipe());
+
                 return null;
             }
+
             @Override
             protected void onPostExecute(Void aVoid) {
                 super.onPostExecute(aVoid);
