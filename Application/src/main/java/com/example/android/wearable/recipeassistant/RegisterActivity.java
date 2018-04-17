@@ -44,7 +44,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         initListeners();
         initObjects();
     }
-
     /**
      * This method is to initialize views
      */

@@ -17,7 +17,7 @@ public class MainPage extends Activity {
         }
 
     public void StartButtonClicked(View view) {
-        Intent intent = new Intent(this, RecipeListActivity.class);
+        Intent intent = new Intent(this, UsersListActivity.class);
         startActivity(intent);
     }
 
