@@ -1,34 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
     abi="x86"
-    api-level="27"
+    api-level="26"
     build-mode="FULL"
     density="420dpi"
     format="10"
     plugin-version="3.1.1"
-    timestamp="1523889628393"
+    timestamp="1523984774049"
     token="-88573908672283318"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="5800" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="1522" />
     <task
         name="verifier"
-        duration="0" />
+        duration="894" />
 
     <artifact
-        location="C:\Users\LG\Desktop\moblie\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_0.apk"
+        location="C:\Users\Sweng\Desktop\mobile\RecipeAssistant\Application\build\intermediates\resources\instant-run\debug\resources-debug.apk"
         type="SPLIT" />
     <artifact
-        location="C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_0.apk"
+        location="C:\Users\Sweng\Desktop\mobile\RecipeAssistant\Application\build\intermediates\split-apk\debug\dep\dependencies.apk"
         type="SPLIT" />
+    <artifact
+        location="C:\Users\Sweng\Desktop\mobile\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_3.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Sweng\Desktop\mobile\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_6.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Sweng\Desktop\mobile\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_2.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Sweng\Desktop\mobile\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_1.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Sweng\Desktop\mobile\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_4.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Sweng\Desktop\mobile\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_0.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Sweng\Desktop\mobile\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_5.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Sweng\Desktop\mobile\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_7.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Sweng\Desktop\mobile\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_8.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Sweng\Desktop\mobile\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_9.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Sweng\Desktop\mobile\RecipeAssistant\Application\build\intermediates\instant-run-apk\debug\Application-debug.apk"
+        type="SPLIT_MAIN" />
     <artifact
         location="C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_7.apk"
         type="SPLIT" />
@@ -36,25 +69,10 @@
         location="C:\Users\LG\Desktop\moblie\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_7.apk"
         type="SPLIT" />
     <artifact
-        location="C:\Users\LG\Desktop\moblie\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_5.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_9.apk"
-        type="SPLIT" />
-    <artifact
         location="C:\Users\LG\Desktop\moblie\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_2.apk"
         type="SPLIT" />
     <artifact
-        location="C:\Users\LG\Desktop\moblie\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_9.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_5.apk"
-        type="SPLIT" />
-    <artifact
         location="C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_3.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\LG\Desktop\moblie\RecipeAssistant\Application\build\intermediates\split-apk\debug\dep\dependencies.apk"
         type="SPLIT" />
     <artifact
         location="C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_1.apk"
@@ -63,16 +81,7 @@
         location="C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_6.apk"
         type="SPLIT" />
     <artifact
-        location="C:\Users\LG\Desktop\moblie\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_1.apk"
-        type="SPLIT" />
-    <artifact
         location="C:\Users\LG\Desktop\moblie\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_4.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\LG\Desktop\moblie\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_6.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\build\intermediates\split-apk\debug\dep\dependencies.apk"
         type="SPLIT" />
     <artifact
         location="C:\Users\LG\Desktop\moblie\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_8.apk"
@@ -81,31 +90,88 @@
         location="C:\Users\LG\Desktop\moblie\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_3.apk"
         type="SPLIT" />
     <artifact
-        location="C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_8.apk"
-        type="SPLIT" />
-    <artifact
         location="C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_2.apk"
         type="SPLIT" />
     <artifact
-        location="C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+        location="C:\Users\LG\Desktop\moblie\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_0.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_0.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\LG\Desktop\moblie\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_5.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_9.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\LG\Desktop\moblie\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_9.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_5.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\LG\Desktop\moblie\RecipeAssistant\Application\build\intermediates\split-apk\debug\dep\dependencies.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\LG\Desktop\moblie\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_1.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\LG\Desktop\moblie\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_6.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\build\intermediates\split-apk\debug\dep\dependencies.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_8.apk"
         type="SPLIT" />
     <artifact
         location="C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_4.apk"
         type="SPLIT" />
-    <artifact
-        location="C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\build\intermediates\instant-run-apk\debug\Application-debug.apk"
-        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1523889628393"
+        timestamp="1523984774049"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="C:\Users\LG\Desktop\moblie\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            location="C:\Users\Sweng\Desktop\mobile\RecipeAssistant\Application\build\intermediates\resources\instant-run\debug\resources-debug.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            location="C:\Users\Sweng\Desktop\mobile\RecipeAssistant\Application\build\intermediates\split-apk\debug\dep\dependencies.apk"
             type="SPLIT" />
+        <artifact
+            location="C:\Users\Sweng\Desktop\mobile\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Sweng\Desktop\mobile\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Sweng\Desktop\mobile\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Sweng\Desktop\mobile\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Sweng\Desktop\mobile\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Sweng\Desktop\mobile\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Sweng\Desktop\mobile\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Sweng\Desktop\mobile\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Sweng\Desktop\mobile\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_8.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Sweng\Desktop\mobile\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Sweng\Desktop\mobile\RecipeAssistant\Application\build\intermediates\instant-run-apk\debug\Application-debug.apk"
+            type="SPLIT_MAIN" />
         <artifact
             location="C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_7.apk"
             type="SPLIT" />
@@ -113,25 +179,10 @@
             location="C:\Users\LG\Desktop\moblie\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_7.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\LG\Desktop\moblie\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_5.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_9.apk"
-            type="SPLIT" />
-        <artifact
             location="C:\Users\LG\Desktop\moblie\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\LG\Desktop\moblie\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_9.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_5.apk"
-            type="SPLIT" />
-        <artifact
             location="C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_3.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\LG\Desktop\moblie\RecipeAssistant\Application\build\intermediates\split-apk\debug\dep\dependencies.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_1.apk"
@@ -140,16 +191,7 @@
             location="C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_6.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\LG\Desktop\moblie\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_1.apk"
-            type="SPLIT" />
-        <artifact
             location="C:\Users\LG\Desktop\moblie\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_4.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\LG\Desktop\moblie\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_6.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\build\intermediates\split-apk\debug\dep\dependencies.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\LG\Desktop\moblie\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_8.apk"
@@ -158,20 +200,44 @@
             location="C:\Users\LG\Desktop\moblie\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_3.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_8.apk"
-            type="SPLIT" />
-        <artifact
             location="C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+            location="C:\Users\LG\Desktop\moblie\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\LG\Desktop\moblie\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\LG\Desktop\moblie\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\LG\Desktop\moblie\RecipeAssistant\Application\build\intermediates\split-apk\debug\dep\dependencies.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\LG\Desktop\moblie\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\LG\Desktop\moblie\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\build\intermediates\split-apk\debug\dep\dependencies.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
-        <artifact
-            location="C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\build\intermediates\instant-run-apk\debug\Application-debug.apk"
-            type="SPLIT_MAIN" />
     </build>
 
 </instant-run>

@@ -12,8 +12,6 @@ public class MainPage extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mainpage);
 
-
-
         }
 
     public void StartButtonClicked(View view) {
@@ -22,7 +20,7 @@ public class MainPage extends Activity {
     }
 
     public void FavoriteButtonClicked(View view) {
-        Intent intent = new Intent(this, RecipeRegisterActivity.class);
+        Intent intent = new Intent(this, Favorite.class);
         startActivity(intent);
     }
 }
