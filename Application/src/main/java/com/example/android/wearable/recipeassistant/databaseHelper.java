@@ -93,14 +93,14 @@ public class databaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-    public void addRecipe(Recipe recipe) {
+    public void addRecipe(Recipe rc) {
         db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(COLUMN_RECIPE_TITLE, recipe.getTitleText());
-        values.put(COLUMN_RECIPE_SUMMARY, recipe.getSummaryText());
-        values.put(COLUMN_RECIPE_INGREDIENTS, recipe.getIngredientsText());
-        values.put(COLUMN_RECIPE_STEP, recipe.getSteps());
+        values.put(COLUMN_RECIPE_TITLE, rc.getTitleText());
+        values.put(COLUMN_RECIPE_SUMMARY, rc.getSummaryText());
+        values.put(COLUMN_RECIPE_INGREDIENTS, rc.getIngredientsText());
+        values.put(COLUMN_RECIPE_STEP, rc.getSteps());
 
         // Inserting Row
         db.insert(TABLE_RECIPE, null, values);
