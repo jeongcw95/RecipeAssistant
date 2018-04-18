@@ -92,7 +92,9 @@ public class RecipeListActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void recipeModifyClicked(View view){
-        Intent intent = new Intent(this, MainPage.class);
+        Intent intent = new Intent(this, RecipeModifyActivity.class);
+        String title = RecipeRecyclerAdapter.R_position.getTitleText();
+        intent.putExtra("title", title);
         startActivity(intent);
     }
     public void recipeDeleteClicked(View view){

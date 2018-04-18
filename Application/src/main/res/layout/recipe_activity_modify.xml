@@ -29,14 +29,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp">
 
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/textInputEditTextTitle"
+            <TextView
+                android:id="@+id/textViewTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Recipe Title"
-                android:inputType="text"
-                android:maxLines="1"
-                android:textColor="@android:color/black" />
+                android:layout_weight="1"
+                android:text="TextView"
+                android:textAppearance="@style/RecipeTitleFont" />
+
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -88,13 +88,13 @@
         </android.support.design.widget.TextInputLayout>
 
         <android.support.v7.widget.AppCompatButton
-            android:id="@+id/appCompatButtonRecipeRegister"
+            android:id="@+id/appCompatButtonRecipeModify"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:background="@color/colorTextHint"
             android:textColor="@android:color/white"
-            android:text="RECIPE REGISTER" />
+            android:background="@color/colorTextHint"
+            android:text="RECIPE MODIFTY" />
 
     </android.support.v7.widget.LinearLayoutCompat>
 </android.support.v4.widget.NestedScrollView>

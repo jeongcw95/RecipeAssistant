@@ -11,27 +11,35 @@
         android:background="@color/colorPrimary"
         android:gravity="center"
         android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <android.support.v7.widget.AppCompatTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="RECIPE LIST"
-            android:textColor="@android:color/white"
-            android:textAppearance="@style/RecipeHugeFont" />
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
 
-        <android.support.v7.widget.AppCompatButton
-            android:id="@+id/AddRecipeButton"
-            style="@style/Widget.AppCompat.Button.Small"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:background="@color/colorPrimary"
-            android:onClick="AddRecipeClicked"
-            android:text="ADD"
-            android:textColor="@android:color/white"
-            android:textSize="10sp"
-            android:visibility="visible" />
+                android:textAlignment="center"
+                android:gravity="center"
+                android:text="RECIPE LIST"
+                android:textAppearance="@style/RecipeHugeFont"
+                android:textColor="@android:color/white" />
 
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/AddRecipeButton"
+                style="@style/Widget.AppCompat.Button.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="right"
+                android:background="@color/colorPrimary"
+                android:onClick="AddRecipeClicked"
+                android:text="ADD"
+                android:textColor="@android:color/white"
+                android:textSize="10sp"
+                android:visibility="visible" />
+        </RelativeLayout>
     </android.support.v7.widget.LinearLayoutCompat>
 
     <android.support.v7.widget.AppCompatTextView

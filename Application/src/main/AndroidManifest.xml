@@ -42,22 +42,16 @@
         <activity
             android:name=".RegisterActivity"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".UsersListActivity"
-            android:screenOrientation="portrait" />
+
         <activity
             android:name=".RecipeRegisterActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".RecipeListActivity"
             android:screenOrientation="portrait" />
-
-
-
-
-
-
-
+        <activity
+            android:name=".RecipeModifyActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainPage"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar">

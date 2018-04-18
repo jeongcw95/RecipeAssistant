@@ -8,64 +8,42 @@ import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class RecipeRegisterActivity extends AppCompatActivity implements View.OnClickListener {
+public class RecipeModifyActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private final AppCompatActivity activity = RecipeRegisterActivity.this;
+    private final AppCompatActivity activity = RecipeModifyActivity.this;
 
     private NestedScrollView nestedScrollView;
 
-    private TextInputLayout textInputLayoutTitle;
-    private TextInputLayout textInputLayoutIngredients;
-    private TextInputLayout textInputLayoutSummary;
-    private TextInputLayout textInputLayoutSteps;
-
-    private TextInputEditText textInputEditTextTitle;
+    private TextView textTitle;
     private TextInputEditText textInputEditTextIngredients;
     private TextInputEditText textInputEditTextSummary;
     private TextInputEditText textInputEditTextSteps;
 
     private AppCompatButton appCompatButtonRecipeRegister;
 
-    private InputValidation inputValidation;
     private databaseHelper databaseHelper;
     private Recipe recipe;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.recipe_activity_register);
+        setContentView(R.layout.recipe_activity_modify);
         nestedScrollView = (NestedScrollView) findViewById(R.id.RecipeNestedScrollView);
-        textInputEditTextTitle = (TextInputEditText) findViewById(R.id.textInputEditTextTitle);
+        textTitle = (TextView) findViewById(R.id.textViewTitle);
         textInputEditTextIngredients = (TextInputEditText) findViewById(R.id.textInputEditTexIngredients);
         textInputEditTextSummary = (TextInputEditText) findViewById(R.id.textInputEditTextSummary);
         textInputEditTextSteps = (TextInputEditText) findViewById(R.id.textInputEditTextSteps);
 
-        appCompatButtonRecipeRegister = (AppCompatButton) findViewById(R.id.appCompatButtonRecipeRegister);
+        appCompatButtonRecipeRegister = (AppCompatButton) findViewById(R.id.appCompatButtonRecipeModify);
         initListeners();
         initObjects();
-    }
-    /**
-     * This method is to initialize views
-     */
-//    private void initViews() {
-//        nestedScrollView = (NestedScrollView) findViewById(R.id.RecipeNestedScrollView);
-//
-//        textInputLayoutTitle = (TextInputLayout) findViewById(R.id.textInputLayoutTitle);
-//        textInputLayoutIngredients = (TextInputLayout) findViewById(R.id.textInputLayoutIngredients);
-//        textInputLayoutSummary = (TextInputLayout) findViewById(R.id.textInputLayoutSummary);
-//        textInputLayoutSteps = (TextInputLayout) findViewById(R.id.textInputLayoutSteps);
-//
-//        textInputEditTextTitle = (TextInputEditText) findViewById(R.id.textInputEditTextTitle);
-//        textInputEditTextIngredients = (TextInputEditText) findViewById(R.id.textInputLayoutIngredients);
-//        textInputEditTextSummary = (TextInputEditText) findViewById(R.id.textInputEditTextSummary);
-//        textInputEditTextSteps = (TextInputEditText) findViewById(R.id.textInputEditTextSteps);
-//
-//        appCompatButtonRegister = (AppCompatButton) findViewById(R.id.appCompatButtonRecipeRegister);
-//    }
+        textTitle.setText(getIntent().getStringExtra("title"));
 
+    }
     /**
      * This method is to initialize listeners
      */
@@ -77,7 +55,7 @@ public class RecipeRegisterActivity extends AppCompatActivity implements View.On
      * This method is to initialize objects to be used
      */
     private void initObjects() {
-        inputValidation = new InputValidation(activity);
+
         databaseHelper = new databaseHelper(activity);
         recipe = new Recipe();
     }
@@ -86,35 +64,36 @@ public class RecipeRegisterActivity extends AppCompatActivity implements View.On
      *
      * @param v
      */
-    @Override
-    public void onClick(View v) {
-        postDataToSQLite();
-        finish();
-    }
+
 
     /**
      * This method is to validate the input text fields and post data to SQLite
      */
-    private void postDataToSQLite() {
-        recipe.setTitleText(textInputEditTextTitle.getText().toString().trim());
+    private void modifyDataToSQLite() {
+        recipe.setTitleText(textTitle.getText().toString().trim());
         recipe.setIngredientsText(textInputEditTextIngredients.getText().toString().trim());
         recipe.setSummaryText(textInputEditTextSummary.getText().toString().trim());
         recipe.setSteps(textInputEditTextSteps.getText().toString().trim());
         databaseHelper.getWritableDatabase();
-        databaseHelper.addRecipe(recipe);
+        databaseHelper.updateRecipe(recipe);
 
-        Toast.makeText(this, "레시피가 추가되었습니다", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "레시피가 수정되었습니다", Toast.LENGTH_LONG).show();
         emptyInputEditText();
-        finish();
     }
 
     /**
      * This method is to empty all input edit text
      */
     private void emptyInputEditText() {
-        textInputEditTextTitle.setText(null);
+        textTitle.setText(null);
         textInputEditTextIngredients.setText(null);
         textInputEditTextSummary.setText(null);
         textInputEditTextSteps.setText(null);
+    }
+
+    @Override
+    public void onClick(View v) {
+        modifyDataToSQLite();
+        finish();
     }
 }

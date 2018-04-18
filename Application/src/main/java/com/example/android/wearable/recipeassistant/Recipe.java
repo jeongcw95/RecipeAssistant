@@ -36,6 +36,12 @@ public class Recipe {
     public String steps;
     public int id;
 
+    public Recipe(){
+
+    }
+    public Recipe(String title){
+        this.titleText = title;
+    }
     public int getId() {
         return id;
     }

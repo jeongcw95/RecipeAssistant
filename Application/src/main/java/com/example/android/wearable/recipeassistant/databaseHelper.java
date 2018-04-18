@@ -235,7 +235,7 @@ public class databaseHelper extends SQLiteOpenHelper {
 
         // updating row
         db.update(TABLE_RECIPE, values, COLUMN_RECIPE_TITLE + " = ?",
-                new String[]{String.valueOf(recipe.getId())});
+                new String[]{String.valueOf(recipe.getTitleText())});
         db.close();
     }
 
