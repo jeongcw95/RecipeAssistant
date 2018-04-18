@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import java.util.List;
+import com.example.android.wearable.recipeassistant.Favorite;
+
 class RecipeViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener,View.OnLongClickListener{
 
     public AppCompatTextView textViewTitle;
@@ -22,6 +24,7 @@ class RecipeViewHolder extends RecyclerView.ViewHolder implements View.OnClickLi
     private ItemClickListener itemClickListener;
     public AppCompatButton Modify;
     public AppCompatButton Delete;
+    public String title_name;
 
     public RecipeViewHolder(View view) {
         super(view);
@@ -76,33 +79,6 @@ public class RecipeRecyclerAdapter extends RecyclerView.Adapter<RecipeViewHolder
         this.listRecipe = listRecipe;
         this.context = context;
     }
-
-//    @Override
-//    public RecipeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-//        //        // inflating recycler item view
-//        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-//        View itemView = inflater.inflate(R.layout.recipe_recycler, parent, false);
-//
-//        return new RecipeViewHolder(itemView);
-//    }
-
-//     public void onBindViewHolder(RecipeViewHolder holder, int position) {
-//        holder.textViewTitle.setText(listRecipe.get(position).getTitleText());
-//        holder.textViewIngredients.setText(listRecipe.get(position).getIngredientsText());
-//        holder.textViewSummary.setText(listRecipe.get(position).getSummaryText());
-//        holder.textViewSteps.setText(listRecipe.get(position).getSteps());
-//        holder.setItemClickListener(new ItemClickListener() {
-//            @Override
-//            public void onClick(View view, int position, boolean isLong) {
-//                if (isLong)
-//                    Toast.makeText(context, "시발롱클릭" + listRecipe.get(position), Toast.LENGTH_LONG).show();
-//                else
-//                    Toast.makeText(context, "조루클릭" + listRecipe.get(position), Toast.LENGTH_LONG).show();
-//            }
-//        });
-//        return onBindViewHolder(this, position);
-//    }
-
     @Override
     public RecipeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
@@ -121,14 +97,17 @@ public class RecipeRecyclerAdapter extends RecyclerView.Adapter<RecipeViewHolder
             @Override
             public void onClick(View view, int position, boolean isLong) {
                 R_position = listRecipe.get(position);
-                if (isLong)
-                    Toast.makeText(context, "시발롱클릭" + listRecipe.get(position), Toast.LENGTH_LONG).show();
-                else
-                    Toast.makeText(context, "조루클릭" + listRecipe.get(position), Toast.LENGTH_LONG).show();
+                if (isLong) {
+                    Toast.makeText(context, "즐겨찾기에 추가되었습니다", Toast.LENGTH_LONG).show();
+                    Favorite.FAVORITE_LIST.add(R_position.getTitleText());
+                }
+                else{
+                    // Toast.makeText(context, "Short touch", Toast.LENGTH_LONG).show();
+                }
             }
         });
     }
-
+//+ 눌렀을대 위치 -  listRecipe.get(position)
     @Override
     public int getItemCount() {
         return listRecipe.size();

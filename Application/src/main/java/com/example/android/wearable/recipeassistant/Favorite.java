@@ -1,6 +1,7 @@
 package com.example.android.wearable.recipeassistant;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -25,7 +26,10 @@ public class Favorite extends Activity {
     public static SwipeMenuListView FavoriteListView;
     static final ArrayList<String> FAVORITE_LIST = new ArrayList<String>();
     public static ArrayAdapter adapter1;
-
+    public void goList(){
+        Intent intent = new Intent(this, RecipeListActivity.class);
+        startActivity(intent);
+    }
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.favorite);
@@ -93,7 +97,7 @@ public class Favorite extends Activity {
                 switch (index) {
                     case 0:
                         Log.d(TAG, "Open Button Execute");
-//                        recreate();
+                        goList();
 
                         break;
                     case 1:
@@ -109,25 +113,3 @@ public class Favorite extends Activity {
         });
     }
 }
-
-    /*public void delete(View view) {
-        int count, checked;
-        count = adapter1.getCount();
-        if (count > 0) {
-            checked = FavoriteListView.getCheckedItemPosition();
-            if (checked > -1 && checked < count) {
-                FAVORITE_LIST.remove(checked);
-                FavoriteListView.clearChoices();
-                adapter1.notifyDataSetChanged();
-            }
-        }
-    }*/
-
-//    public boolean checkList(){
-//        int count;
-//        for(int i=0; i<adapter1.getCount(); i++){
-//            if(FAVORITE_LIST.get(i) == RecipeActivity.mRecipe.titleText)
-//        }
-//
-//    }
-//}

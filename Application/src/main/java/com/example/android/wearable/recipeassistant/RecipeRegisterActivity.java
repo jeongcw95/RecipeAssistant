@@ -16,12 +16,6 @@ public class RecipeRegisterActivity extends AppCompatActivity implements View.On
     private final AppCompatActivity activity = RecipeRegisterActivity.this;
 
     private NestedScrollView nestedScrollView;
-
-    private TextInputLayout textInputLayoutTitle;
-    private TextInputLayout textInputLayoutIngredients;
-    private TextInputLayout textInputLayoutSummary;
-    private TextInputLayout textInputLayoutSteps;
-
     private TextInputEditText textInputEditTextTitle;
     private TextInputEditText textInputEditTextIngredients;
     private TextInputEditText textInputEditTextSummary;
@@ -47,28 +41,7 @@ public class RecipeRegisterActivity extends AppCompatActivity implements View.On
         initListeners();
         initObjects();
     }
-    /**
-     * This method is to initialize views
-     */
-//    private void initViews() {
-//        nestedScrollView = (NestedScrollView) findViewById(R.id.RecipeNestedScrollView);
-//
-//        textInputLayoutTitle = (TextInputLayout) findViewById(R.id.textInputLayoutTitle);
-//        textInputLayoutIngredients = (TextInputLayout) findViewById(R.id.textInputLayoutIngredients);
-//        textInputLayoutSummary = (TextInputLayout) findViewById(R.id.textInputLayoutSummary);
-//        textInputLayoutSteps = (TextInputLayout) findViewById(R.id.textInputLayoutSteps);
-//
-//        textInputEditTextTitle = (TextInputEditText) findViewById(R.id.textInputEditTextTitle);
-//        textInputEditTextIngredients = (TextInputEditText) findViewById(R.id.textInputLayoutIngredients);
-//        textInputEditTextSummary = (TextInputEditText) findViewById(R.id.textInputEditTextSummary);
-//        textInputEditTextSteps = (TextInputEditText) findViewById(R.id.textInputEditTextSteps);
-//
-//        appCompatButtonRegister = (AppCompatButton) findViewById(R.id.appCompatButtonRecipeRegister);
-//    }
 
-    /**
-     * This method is to initialize listeners
-     */
     private void initListeners() {
         appCompatButtonRecipeRegister.setOnClickListener(this);
     }

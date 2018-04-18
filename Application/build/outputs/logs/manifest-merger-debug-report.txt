@@ -101,57 +101,57 @@ MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\CH
 	android:theme
 		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:31:9-40
 activity#com.example.android.wearable.recipeassistant.LoginActivity
-ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:33:9-41:20
+ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:33:9-37:20
 	android:screenOrientation
 		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:35:13-49
 	android:name
 		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:34:13-42
-intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:36:13-40:29
-action#android.intent.action.MAIN
-ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:37:17-69
-	android:name
-		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:37:25-66
-category#android.intent.category.LAUNCHER
-ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:39:17-77
-	android:name
-		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:39:27-74
 activity#com.example.android.wearable.recipeassistant.RegisterActivity
+ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:38:9-40:52
+	android:screenOrientation
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:40:13-49
+	android:name
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:39:13-45
+activity#com.example.android.wearable.recipeassistant.RecipeRegisterActivity
 ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:42:9-44:52
 	android:screenOrientation
 		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:44:13-49
 	android:name
-		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:43:13-45
-activity#com.example.android.wearable.recipeassistant.RecipeRegisterActivity
-ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:46:9-48:52
-	android:screenOrientation
-		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:48:13-49
-	android:name
-		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:47:13-51
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:43:13-51
 activity#com.example.android.wearable.recipeassistant.RecipeListActivity
-ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:49:9-51:52
+ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:45:9-47:52
 	android:screenOrientation
-		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:51:13-49
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:47:13-49
 	android:name
-		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:50:13-47
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:46:13-47
 activity#com.example.android.wearable.recipeassistant.RecipeModifyActivity
-ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:52:9-54:52
+ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:48:9-50:52
 	android:screenOrientation
-		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:54:13-49
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:50:13-49
 	android:name
-		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:53:13-49
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:49:13-49
 activity#com.example.android.wearable.recipeassistant.MainPage
-ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:55:9-59:20
+ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:51:9-55:20
 	android:theme
-		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:57:13-72
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:53:13-72
 	android:name
-		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:56:13-37
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:52:13-37
 activity#com.example.android.wearable.recipeassistant.Splash
-ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:60:9-64:20
+ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:56:9-64:20
 	android:theme
-		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:62:13-47
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:58:13-47
 	android:name
-		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:61:13-35
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:57:13-35
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:59:13-63:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:60:17-69
+	android:name
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:60:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:62:17-77
+	android:name
+		ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:62:27-74
 activity#com.example.android.wearable.recipeassistant.Favorite
 ADDED from C:\Users\CH\Desktop\3-1\anpr\RecipeAssistant\RecipeAssistant\Application\src\main\AndroidManifest.xml:67:9-70:62
 	android:label

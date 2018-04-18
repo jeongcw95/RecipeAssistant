@@ -42,7 +42,9 @@ public class RecipeModifyActivity extends AppCompatActivity implements View.OnCl
         initListeners();
         initObjects();
         textTitle.setText(getIntent().getStringExtra("title"));
-
+        textInputEditTextIngredients.setText(getIntent().getStringExtra("ingredients"));
+        textInputEditTextSummary.setText(getIntent().getStringExtra("summary"));
+        textInputEditTextSteps.setText(getIntent().getStringExtra("steps"));
     }
     /**
      * This method is to initialize listeners

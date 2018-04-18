@@ -93,20 +93,14 @@ public class RecipeListActivity extends AppCompatActivity {
     }
     public void recipeModifyClicked(View view){
         Intent intent = new Intent(this, RecipeModifyActivity.class);
-        String title = RecipeRecyclerAdapter.R_position.getTitleText();
-        intent.putExtra("title", title);
+        intent.putExtra("title", RecipeRecyclerAdapter.R_position.getTitleText());
+        intent.putExtra("ingredients", RecipeRecyclerAdapter.R_position.getIngredientsText());
+        intent.putExtra("summary", RecipeRecyclerAdapter.R_position.getSummaryText());
+        intent.putExtra("steps", RecipeRecyclerAdapter.R_position.getSteps());
         startActivity(intent);
     }
     public void recipeDeleteClicked(View view){
         databaseHelper.deleteRecipe(RecipeRecyclerAdapter.R_position);
         recreate();
-//        Recipe recipe = new Recipe();
-//        int position = RecipeViewHolder.s_position;
-//        Snackbar.make(view, position, 3).show();
-//        recipe.setTitleText(listRecipe.get(position).getTitleText());
-//        recipe.setIngredientsText(listRecipe.get(position).getIngredientsText());
-//        recipe.setSummaryText(listRecipe.get(position).getSummaryText());
-//        recipe.setSteps((listRecipe.get(position).getSteps()));
-//        databaseHelper.deleteRecipe(recipe);
     }
 }
