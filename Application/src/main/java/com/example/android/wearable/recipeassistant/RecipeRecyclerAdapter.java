@@ -12,6 +12,8 @@ import java.util.List;
 public class RecipeRecyclerAdapter extends RecyclerView.Adapter<RecipeRecyclerAdapter.RecipeViewHolder> {
 
     private List<Recipe> listRecipe;
+    private OnItemClickListener onItemClickListener;
+
 
     public RecipeRecyclerAdapter(List<Recipe> listRecipe) {
         this.listRecipe = listRecipe;
@@ -29,9 +31,10 @@ public class RecipeRecyclerAdapter extends RecyclerView.Adapter<RecipeRecyclerAd
     @Override
     public void onBindViewHolder(RecipeViewHolder holder, int position) {
         holder.textViewTitle.setText(listRecipe.get(position).getTitleText());
-        holder.textViewSummary.setText(listRecipe.get(position).getSummaryText());
         holder.textViewIngredients.setText(listRecipe.get(position).getIngredientsText());
+        holder.textViewSummary.setText(listRecipe.get(position).getSummaryText());
         holder.textViewSteps.setText(listRecipe.get(position).getSteps());
+
     }
 
     @Override
@@ -44,17 +47,25 @@ public class RecipeRecyclerAdapter extends RecyclerView.Adapter<RecipeRecyclerAd
     public class RecipeViewHolder extends RecyclerView.ViewHolder {
 
         public AppCompatTextView textViewTitle;
-        public AppCompatTextView textViewSummary;
         public AppCompatTextView textViewIngredients;
+        public AppCompatTextView textViewSummary;
         public AppCompatTextView textViewSteps;
 
 
         public RecipeViewHolder(View view) {
             super(view);
             textViewTitle = (AppCompatTextView) view.findViewById(R.id.recipeTextTitle);
-            textViewSummary = (AppCompatTextView) view.findViewById(R.id.recipeTextSummary);
             textViewIngredients = (AppCompatTextView) view.findViewById(R.id.recipeTextIngredients);
+            textViewSummary = (AppCompatTextView) view.findViewById(R.id.recipeTextSummary);
             textViewSteps = (AppCompatTextView) view.findViewById(R.id.recipeTextSteps);
         }
     }
+
+    interface OnItemClickListener {
+        void onItemClickListener(View view, int position);
+    }
+    private void performOnItemClicked(View v, int p) {
+        onItemClickListener.onItemClickListener(v, p);
+    }
+
 }

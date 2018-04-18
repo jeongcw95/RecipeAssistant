@@ -12,27 +12,6 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!--<LinearLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:orientation="horizontal">-->
-<!--//이미지, 레시피타이틀, 서머리-->
-            <!--<android.support.v7.widget.AppCompatTextView-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_weight="2"-->
-                <!--android:text="IMAGE"-->
-                <!--android:textColor="@color/colorTextHint" />-->
-
-            <!--<android.support.v7.widget.AppCompatTextView-->
-                <!--android:id="@+id/textViewImage"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_weight="1"-->
-                <!--android:text="IMAGE"-->
-                <!--android:textColor="@android:color/darker_gray" />-->
-        <!--</LinearLayout>-->
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -51,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="recipeTextTitle"
+                android:text="TITLE"
                 android:textColor="@android:color/darker_gray" />
         </LinearLayout>
 
@@ -73,7 +52,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Ingredients"
+                android:text="INGREDIENTS"
                 android:textColor="@android:color/darker_gray" />
         </LinearLayout>
         <LinearLayout
@@ -115,7 +94,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="recipeTextSummary"
+                android:text="STEPS"
                 android:textColor="@android:color/darker_gray" />
         </LinearLayout>
 

@@ -22,7 +22,7 @@ public class MainPage extends Activity {
     }
 
     public void FavoriteButtonClicked(View view) {
-        Intent intent = new Intent(this, RecipeRegisterActivity.class);
+        Intent intent = new Intent(this, Favorite.class);
         startActivity(intent);
     }
 }

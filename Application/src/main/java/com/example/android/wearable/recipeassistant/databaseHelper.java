@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class databaseHelper extends SQLiteOpenHelper {
-    private static SQLiteDatabase db;
+
     // Database Version
     private static final int DATABASE_VERSION = 1;
 
@@ -40,7 +40,8 @@ public class databaseHelper extends SQLiteOpenHelper {
 
     private String CREATE_RECIPE_TABLE = "CREATE TABLE " + TABLE_RECIPE + "("
             + COLUMN_RECIPE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_RECIPE_TITLE + " TEXT,"
-            + COLUMN_RECIPE_SUMMARY + " TEXT," + COLUMN_RECIPE_INGREDIENTS + "TEXT, " + COLUMN_RECIPE_STEP + " TEXT" + ")";
+            + COLUMN_RECIPE_SUMMARY + " TEXT," + COLUMN_RECIPE_INGREDIENTS + " TEXT," + COLUMN_RECIPE_STEP + " TEXT" + ")";
+
     // drop table sql query
     private String DROP_USER_TABLE = "DROP TABLE IF EXISTS " + TABLE_USER;
 
@@ -50,23 +51,18 @@ public class databaseHelper extends SQLiteOpenHelper {
      *
      * @param context
      */
-
-
     public databaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db = this.db;
         db.execSQL(CREATE_USER_TABLE);
         db.execSQL(CREATE_RECIPE_TABLE);
     }
 
-
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db = this.db;
         //Drop User Table if exist
         db.execSQL(DROP_USER_TABLE);
         db.execSQL(DROP_RECIPE_TABLE);
@@ -81,7 +77,7 @@ public class databaseHelper extends SQLiteOpenHelper {
      * @param user
      */
     public void addUser(User user) {
-        db = this.getWritableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
         values.put(COLUMN_USER_NAME, user.getName());
@@ -93,14 +89,14 @@ public class databaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-    public void addRecipe(Recipe rc) {
-        db = this.getWritableDatabase();
+    public void addRecipe(Recipe recipe) {
+        SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(COLUMN_RECIPE_TITLE, rc.getTitleText());
-        values.put(COLUMN_RECIPE_SUMMARY, rc.getSummaryText());
-        values.put(COLUMN_RECIPE_INGREDIENTS, rc.getIngredientsText());
-        values.put(COLUMN_RECIPE_STEP, rc.getSteps());
+        values.put(COLUMN_RECIPE_TITLE, recipe.getTitleText());
+        values.put(COLUMN_RECIPE_SUMMARY, recipe.getSummaryText());
+        values.put(COLUMN_RECIPE_INGREDIENTS, recipe.getIngredientsText());
+        values.put(COLUMN_RECIPE_STEP, recipe.getSteps());
 
         // Inserting Row
         db.insert(TABLE_RECIPE, null, values);
@@ -155,7 +151,6 @@ public class databaseHelper extends SQLiteOpenHelper {
         }
         cursor.close();
         db.close();
-
         // return user list
         return userList;
     }
@@ -175,7 +170,6 @@ public class databaseHelper extends SQLiteOpenHelper {
         List<Recipe> recipeList = new ArrayList<Recipe>();
 
         SQLiteDatabase db = this.getReadableDatabase();
-
         // query the user table
         /**
          * Here query function is used to fetch records from user table this function works like we use sql query.

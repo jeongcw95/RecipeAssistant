@@ -8,7 +8,7 @@ import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
 import android.view.View;
-
+import android.widget.Toast;
 
 
 public class RecipeRegisterActivity extends AppCompatActivity implements View.OnClickListener {
@@ -89,6 +89,7 @@ public class RecipeRegisterActivity extends AppCompatActivity implements View.On
     @Override
     public void onClick(View v) {
         postDataToSQLite();
+        finish();
     }
 
     /**
@@ -102,6 +103,7 @@ public class RecipeRegisterActivity extends AppCompatActivity implements View.On
         databaseHelper.getWritableDatabase();
         databaseHelper.addRecipe(recipe);
 
+        Toast.makeText(this, "레시피가 추가되었습니다", Toast.LENGTH_LONG).show();
 //        Snackbar.make(nestedScrollView, getString(R.string.success_message), Snackbar.LENGTH_LONG).show();
         emptyInputEditText();
         finish();

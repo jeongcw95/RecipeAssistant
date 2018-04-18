@@ -1,5 +1,6 @@
 package com.example.android.wearable.recipeassistant;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +9,7 @@ import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,10 +27,14 @@ public class RecipeListActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_list);
-        initObjects();
         initViews();
-    }
+        initObjects();
 
+    }
+    protected void onRestart(){
+        super.onRestart();
+        recreate();
+    }
     /**
      * This method is to initialize views
      */
@@ -50,9 +56,6 @@ public class RecipeListActivity extends AppCompatActivity {
         recyclerViewRecipe.setAdapter(recipeRecyclerAdapter);
         databaseHelper = new databaseHelper(activity);
 
-//        String TitleFromIntent = getIntent().getStringExtra("TITLE");
-//        textViewName.setText(TitleFromIntent);
-
         getDataFromSQLite();
     }
 
@@ -66,6 +69,7 @@ public class RecipeListActivity extends AppCompatActivity {
             protected Void doInBackground(Void... params) {
                 listRecipe.clear();
                 listRecipe.addAll(databaseHelper.getAllRecipe());
+
                 return null;
             }
             @Override
@@ -75,4 +79,9 @@ public class RecipeListActivity extends AppCompatActivity {
             }
         }.execute();
     }
+    public void AddRecipeClicked(View view){
+        Intent intent = new Intent(this, RecipeRegisterActivity.class);
+        startActivity(intent);
+    }
+
 }
