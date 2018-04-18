@@ -19,14 +19,16 @@
             android:textColor="@android:color/white"
             android:textAppearance="@style/RecipeHugeFont" />
 
-        <Button
+        <android.support.v7.widget.AppCompatButton
             android:id="@+id/AddRecipeButton"
             style="@style/Widget.AppCompat.Button.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
+            android:background="@color/colorPrimary"
             android:onClick="AddRecipeClicked"
             android:text="ADD"
+            android:textColor="@android:color/white"
             android:textSize="10sp"
             android:visibility="visible" />
 

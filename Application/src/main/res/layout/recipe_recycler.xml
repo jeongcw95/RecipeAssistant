@@ -8,7 +8,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="16dp">
 
@@ -55,6 +55,7 @@
                 android:text="INGREDIENTS"
                 android:textColor="@android:color/darker_gray" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -76,6 +77,7 @@
                 android:text="SUMMARY"
                 android:textColor="@android:color/darker_gray" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -96,6 +98,33 @@
                 android:layout_weight="1"
                 android:text="STEPS"
                 android:textColor="@android:color/darker_gray" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/recipeModifyButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="recipeModifyClicked"
+                android:text="MODIFY"
+                android:textColor="@color/colorTextHint"
+                android:visibility="gone" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/recipeDeleteButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="recipeDeleteClicked"
+                android:text="DELETE"
+                android:textColor="@color/colorTextHint"
+                android:visibility="gone" />
         </LinearLayout>
 
     </LinearLayout>
