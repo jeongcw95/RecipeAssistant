@@ -24,6 +24,7 @@ public class databaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_USER_NAME = "user_name";
     private static final String COLUMN_USER_EMAIL = "user_email";
     private static final String COLUMN_USER_PASSWORD = "user_password";
+    private static final String COLUMN_USER_AUTOLOGIN = "user_auto_login";
 
     private static final String TABLE_RECIPE = "recipe";
 
@@ -33,19 +34,25 @@ public class databaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_RECIPE_INGREDIENTS = "recipe_ingredients";
     private static final String COLUMN_RECIPE_STEP = "recipe_steps";
 
+    private static final String TABLE_FAVORITE = "favorite";
+
     // create table sql query
     private String CREATE_USER_TABLE = "CREATE TABLE " + TABLE_USER + "("
             + COLUMN_USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_USER_NAME + " TEXT,"
-            + COLUMN_USER_EMAIL + " TEXT," + COLUMN_USER_PASSWORD + " TEXT" + ")";
+            + COLUMN_USER_EMAIL + " TEXT," + COLUMN_USER_PASSWORD + " TEXT," + COLUMN_USER_AUTOLOGIN + " INTEGER" + ")";
 
     private String CREATE_RECIPE_TABLE = "CREATE TABLE " + TABLE_RECIPE + "("
             + COLUMN_RECIPE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_RECIPE_TITLE + " TEXT,"
             + COLUMN_RECIPE_SUMMARY + " TEXT," + COLUMN_RECIPE_INGREDIENTS + " TEXT," + COLUMN_RECIPE_STEP + " TEXT" + ")";
 
+    private String CREATE_FAVORITE_TABLE = "CREATE TABLE " + TABLE_FAVORITE + "("
+            + COLUMN_USER_ID + " INTEGER PRIMARY KEY," + COLUMN_RECIPE_TITLE + " TEXT" + ")";
     // drop table sql query
     private String DROP_USER_TABLE = "DROP TABLE IF EXISTS " + TABLE_USER;
 
     private String DROP_RECIPE_TABLE = "DROP TABLE IF EXISTS " + TABLE_RECIPE;
+
+    private String DROP_FAVORITE_TABLE = "DROP TABLE IF EXISTS " + TABLE_FAVORITE;
     /**
      * Constructor
      *
@@ -59,6 +66,7 @@ public class databaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_USER_TABLE);
         db.execSQL(CREATE_RECIPE_TABLE);
+        db.execSQL(CREATE_FAVORITE_TABLE);
     }
 
     @Override
@@ -66,6 +74,7 @@ public class databaseHelper extends SQLiteOpenHelper {
         //Drop User Table if exist
         db.execSQL(DROP_USER_TABLE);
         db.execSQL(DROP_RECIPE_TABLE);
+        db.execSQL(DROP_FAVORITE_TABLE);
         // Create tables again
         onCreate(db);
 
@@ -100,6 +109,18 @@ public class databaseHelper extends SQLiteOpenHelper {
 
         // Inserting Row
         db.insert(TABLE_RECIPE, null, values);
+        db.close();
+    }
+
+    public void addFavorite(User user, Recipe recipe) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_USER_ID, user.getId());
+        values.put(COLUMN_RECIPE_TITLE, recipe.getTitleText());
+
+        // Inserting Row
+        db.insert(TABLE_FAVORITE, null, values);
         db.close();
     }
     /**
@@ -205,6 +226,51 @@ public class databaseHelper extends SQLiteOpenHelper {
         // return user list
         return recipeList;
     }
+    public List<Favorite> getAllFavorite() {
+        // array of columns to fetch
+        String[] columns = {
+                COLUMN_USER_ID,
+                COLUMN_RECIPE_TITLE
+        };
+        // sorting orders
+        String sortOrder =
+                COLUMN_USER_ID + " ASC";
+        List<Favorite> favoriteList = new ArrayList<Favorite>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        // query the user table
+        /**
+         * Here query function is used to fetch records from user table this function works like we use sql query.
+         * SQL query equivalent to this query function is
+         * SELECT user_id,user_name,user_email,user_password FROM user ORDER BY user_name;
+         */
+        Cursor cursor = db.query(TABLE_FAVORITE, //Table to query
+                columns,    //columns to return
+                null,        //columns for the WHERE clause
+                null,        //The values for the WHERE clause
+                null,       //group the rows
+                null,       //filter by row groups
+                sortOrder); //The sort order
+
+
+        // Traversing through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                Favorite favorite = new Favorite();
+                favorite.setUser_id(Integer.parseInt(cursor.getString(cursor.getColumnIndex(COLUMN_USER_ID))));
+                favorite.setRecipe_title(cursor.getString(cursor.getColumnIndex(COLUMN_RECIPE_TITLE)));
+
+
+                // Adding user record to list
+                favoriteList.add(favorite);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+
+        // return user list
+        return favoriteList;
+    }
     /**
      * This method to update user record
      *
@@ -217,6 +283,7 @@ public class databaseHelper extends SQLiteOpenHelper {
         values.put(COLUMN_USER_NAME, user.getName());
         values.put(COLUMN_USER_EMAIL, user.getEmail());
         values.put(COLUMN_USER_PASSWORD, user.getPassword());
+        values.put(COLUMN_USER_AUTOLOGIN, user.getAutologin());
 
         // updating row
         db.update(TABLE_USER, values, COLUMN_USER_ID + " = ?",
@@ -256,6 +323,14 @@ public class databaseHelper extends SQLiteOpenHelper {
         // delete user record by id
         db.delete(TABLE_RECIPE, COLUMN_RECIPE_TITLE + " = ?",
                 new String[]{String.valueOf(recipe.getTitleText())});
+        db.close();
+    }
+
+    public void deleteFavorite(Favorite favorite) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        // delete user record by id
+        db.delete(TABLE_FAVORITE, COLUMN_RECIPE_TITLE + " = ?",
+                new String[]{String.valueOf(favorite.getRecipe_title())});
         db.close();
     }
 
