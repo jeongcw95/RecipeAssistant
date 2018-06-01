@@ -14,7 +14,7 @@ public class MainPage extends Activity {
 
 
 
-        }
+    }
 
     public void StartButtonClicked(View view) {
         Intent intent = new Intent(this, RecipeListActivity.class);
@@ -22,8 +22,7 @@ public class MainPage extends Activity {
     }
 
     public void FavoriteButtonClicked(View view) {
-        Intent intent = new Intent(this, Favorite.class);
+        Intent intent = new Intent(this, FavoriteActivity.class);
         startActivity(intent);
     }
 }
-

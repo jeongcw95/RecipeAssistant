@@ -32,7 +32,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".LoginActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".RegisterActivity"
             android:screenOrientation="portrait" />
@@ -47,7 +47,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".MainPage"
-            android:theme="@android:style/Theme.Holo.Light.NoActionBar"></activity>
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" />
         <activity
             android:name=".Splash"
             android:theme="@style/SplashTheme">
@@ -58,10 +58,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Favorite"
+            android:name=".FavoriteActivity"
             android:label="즐겨찾기"
             android:theme="@android:style/Theme.Holo.Light" />
-        <activity android:name=".SettingActivity"></activity>
+        <activity android:name=".SettingActivity" />
     </application>
 
 </manifest>

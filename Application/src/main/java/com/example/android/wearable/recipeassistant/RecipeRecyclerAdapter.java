@@ -1,19 +1,15 @@
 package com.example.android.wearable.recipeassistant;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.RecyclerView;
-import android.telecom.Connection;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.Toast;
 
 import java.util.List;
-import com.example.android.wearable.recipeassistant.Favorite;
 
 class RecipeViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener,View.OnLongClickListener{
 
@@ -99,7 +95,7 @@ public class RecipeRecyclerAdapter extends RecyclerView.Adapter<RecipeViewHolder
                 R_position = listRecipe.get(position);
                 if (isLong) {
                     Toast.makeText(context, "즐겨찾기에 추가되었습니다", Toast.LENGTH_LONG).show();
-                    Favorite.FAVORITE_LIST.add(R_position.getTitleText());
+                    FavoriteActivity.FAVORITE_LIST.add(R_position.getTitleText());
                 }
                 else{
                     // Toast.makeText(context, "Short touch", Toast.LENGTH_LONG).show();
@@ -107,7 +103,7 @@ public class RecipeRecyclerAdapter extends RecyclerView.Adapter<RecipeViewHolder
             }
         });
     }
-//+ 눌렀을때 위치 -  listRecipe.get(position)
+    //+ 눌렀을대 위치 -  listRecipe.get(position)
     @Override
     public int getItemCount() {
         return listRecipe.size();
