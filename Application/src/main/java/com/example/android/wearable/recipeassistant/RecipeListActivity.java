@@ -87,10 +87,17 @@ public class RecipeListActivity extends AppCompatActivity {
             }
         }.execute();
     }
+
     public void AddRecipeClicked(View view){
         Intent intent = new Intent(this, RecipeRegisterActivity.class);
         startActivity(intent);
     }
+
+    public void settingClicked(View view){
+        Intent intent = new Intent(this, SettingActivity.class);
+        startActivity(intent);
+    }
+
     public void recipeModifyClicked(View view){
         Intent intent = new Intent(this, RecipeModifyActivity.class);
         intent.putExtra("title", RecipeRecyclerAdapter.R_position.getTitleText());

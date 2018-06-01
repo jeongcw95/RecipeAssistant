@@ -107,7 +107,7 @@ public class RecipeRecyclerAdapter extends RecyclerView.Adapter<RecipeViewHolder
             }
         });
     }
-//+ 눌렀을대 위치 -  listRecipe.get(position)
+//+ 눌렀을때 위치 -  listRecipe.get(position)
     @Override
     public int getItemCount() {
         return listRecipe.size();
