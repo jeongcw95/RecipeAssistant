@@ -5,7 +5,10 @@ public class User {
     private String name;
     private String email;
     private String password;
+    private int autologin;
 
+    public int getAutologin() { return autologin;  }
+    public void setAutologin(int autologin) { this.autologin = autologin; }
     public int getId() {
         return id;
     }
