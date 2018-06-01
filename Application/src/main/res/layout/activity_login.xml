@@ -66,12 +66,12 @@
             android:textColor="@android:color/white" />
 
         <android.support.v7.widget.AppCompatCheckBox
-            android:id="@+id/Auto_Sign_in"
+            android:id="@+id/Auto_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:gravity="center"
-            android:text="AUTO SIGN IN"
+            android:text="AUTO LOGIN"
             android:textAlignment="center"
             android:textSize="16dp" />
 

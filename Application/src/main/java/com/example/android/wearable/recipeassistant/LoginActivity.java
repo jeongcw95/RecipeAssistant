@@ -8,6 +8,7 @@ import android.support.design.widget.TextInputLayout;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
+import android.support.v7.widget.AppCompatCheckBox;
 import android.support.v7.widget.AppCompatTextView;
 import android.view.View;
 
@@ -23,13 +24,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private AppCompatTextView textViewLinkRegister;
     private InputValidation inputValidation;
     private databaseHelper databaseHelper;
+    private AppCompatCheckBox login_checkbox ;
+    public static int AutoLoginSign;
+    public static User LoginUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        //getSupportActionBar().hide();
-
+        AutoLoginSign = 0;
+        LoginUser = new User();
         initViews();
         initListeners();
         initObjects();
@@ -50,7 +54,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         appCompatButtonLogin = (AppCompatButton) findViewById(R.id.appCompatButtonLogin);
 
         textViewLinkRegister = (AppCompatTextView) findViewById(R.id.textViewLinkRegister);
-
+        login_checkbox = (AppCompatCheckBox) findViewById(R.id.Auto_login);
     }
 
     /**
@@ -86,6 +90,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(intentRegister);
                 break;
         }
+
+        if(login_checkbox.isChecked()){
+            AutoLoginSign = 1;
+        }
+        else
+            AutoLoginSign = 0;
     }
 
     /**
@@ -102,13 +112,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             return;
         }
 
-        if (databaseHelper.checkUser(textInputEditTextEmail.getText().toString().trim()
-                , textInputEditTextPassword.getText().toString().trim())) {
+        if (databaseHelper.checkUser(textInputEditTextEmail.getText().toString().trim() , textInputEditTextPassword.getText().toString().trim())) {
+
+
             Intent accountsIntent = new Intent(activity, MainPage.class);
-            //accountsIntent.putExtra("EMAIL", textInputEditTextEmail.getText().toString().trim());
             emptyInputEditText();
             startActivity(accountsIntent);
-        } else {
+        }
+        else {
             // Snack Bar to show success message that record is wrong
             Snackbar.make(nestedScrollView, getString(R.string.error_valid_email_password), Snackbar.LENGTH_LONG).show();
         }

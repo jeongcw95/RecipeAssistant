@@ -783,7 +783,7 @@ int drawable tooltip_frame_dark 0x7f060066
 int drawable tooltip_frame_light 0x7f060067
 int id ALT 0x7f070000
 int id AddRecipeButton 0x7f070001
-int id Auto_Sign_in 0x7f070002
+int id Auto_login 0x7f070002
 int id CTRL 0x7f070003
 int id FUNCTION 0x7f070004
 int id FavoriteList 0x7f070005

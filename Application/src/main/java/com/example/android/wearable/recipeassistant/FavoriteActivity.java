@@ -26,10 +26,12 @@ public class FavoriteActivity extends Activity {
     public static SwipeMenuListView FavoriteListView;
     static final ArrayList<String> FAVORITE_LIST = new ArrayList<String>();
     public static ArrayAdapter adapter1;
-    public void goList(){
+
+    public void goList() {
         Intent intent = new Intent(this, RecipeListActivity.class);
         startActivity(intent);
     }
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.favorite);

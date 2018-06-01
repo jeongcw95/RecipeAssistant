@@ -4,16 +4,18 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.AppCompatCheckBox;
 import android.view.View;
 
 public class MainPage extends Activity {
+    databaseHelper dh;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mainpage);
-
-
-
+        dh = new databaseHelper(this);
+        dh.updateUser(LoginActivity.LoginUser);
     }
 
     public void StartButtonClicked(View view) {

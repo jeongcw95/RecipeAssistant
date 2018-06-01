@@ -37,10 +37,7 @@ public class Recipe {
     public int id;
 
     public Recipe(){
-
-    }
-    public Recipe(String title){
-        this.titleText = title;
+        //
     }
     public int getId() {
         return id;

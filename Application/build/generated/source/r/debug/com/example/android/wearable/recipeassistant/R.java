@@ -3531,7 +3531,7 @@ public final class R {
   public static final class id {
     public static final int ALT=0x7f070000;
     public static final int AddRecipeButton=0x7f070001;
-    public static final int Auto_Sign_in=0x7f070002;
+    public static final int Auto_login=0x7f070002;
     public static final int CTRL=0x7f070003;
     public static final int FUNCTION=0x7f070004;
     public static final int FavoriteList=0x7f070005;

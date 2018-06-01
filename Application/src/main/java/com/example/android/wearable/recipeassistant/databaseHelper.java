@@ -60,6 +60,7 @@ public class databaseHelper extends SQLiteOpenHelper {
      */
     public databaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+
     }
 
     @Override
@@ -92,6 +93,7 @@ public class databaseHelper extends SQLiteOpenHelper {
         values.put(COLUMN_USER_NAME, user.getName());
         values.put(COLUMN_USER_EMAIL, user.getEmail());
         values.put(COLUMN_USER_PASSWORD, user.getPassword());
+        values.put(COLUMN_USER_AUTOLOGIN, user.getAutologin());
 
         // Inserting Row
         db.insert(TABLE_USER, null, values);
@@ -280,6 +282,7 @@ public class databaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
+
         values.put(COLUMN_USER_NAME, user.getName());
         values.put(COLUMN_USER_EMAIL, user.getEmail());
         values.put(COLUMN_USER_PASSWORD, user.getPassword());
@@ -368,6 +371,12 @@ public class databaseHelper extends SQLiteOpenHelper {
                 null,                      //filter by row groups
                 null);                      //The sort order
         int cursorCount = cursor.getCount();
+        /*
+        Login_User.setId(Integer.parseInt(cursor.getString(cursor.getColumnIndex(COLUMN_USER_ID))));
+        Login_User.setName(cursor.getString(cursor.getColumnIndex(COLUMN_USER_NAME)));
+        Login_User.setEmail(cursor.getString(cursor.getColumnIndex(COLUMN_USER_EMAIL)));
+        Login_User.setPassword(cursor.getString(cursor.getColumnIndex(COLUMN_USER_PASSWORD)));
+        */
         cursor.close();
         db.close();
 
@@ -458,5 +467,46 @@ public class databaseHelper extends SQLiteOpenHelper {
         }
 
         return false;
+    }
+
+    public User CheckLoginUser(String email) {
+        User returnUser = new User();
+        // array of columns to fetch
+        String[] columns = {
+                COLUMN_USER_ID
+        };
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        // selection criteria
+        String selection = COLUMN_USER_EMAIL + " = ?";
+
+        // selection argument
+        String[] selectionArgs = {email};
+
+        // query user table with condition
+        /**
+         * Here query function is used to fetch records from user table this function works like we use sql query.
+         * SQL query equivalent to this query function is
+         * SELECT user_id FROM user WHERE user_email = 'jack@androidtutorialshub.com';
+         */
+        Cursor cursor = db.query(TABLE_USER, //Table to query
+                columns,                    //columns to return
+                selection,                  //columns for the WHERE clause
+                selectionArgs,              //The values for the WHERE clause
+                null,                       //group the rows
+                null,                      //filter by row groups
+                null);                      //The sort order
+        int cursorposition = cursor.getPosition();
+        cursor.moveToNext();
+
+        returnUser.setName(cursor.getString(cursor.getColumnIndex(COLUMN_USER_NAME)));
+        returnUser.setEmail(cursor.getString(cursor.getColumnIndex(COLUMN_USER_EMAIL)));
+        returnUser.setPassword(cursor.getString(cursor.getColumnIndex(COLUMN_USER_PASSWORD)));
+        returnUser.setAutologin(LoginActivity.AutoLoginSign);
+
+        cursor.close();
+        db.close();
+
+        return returnUser;
     }
 }
