@@ -10,7 +10,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatCheckBox;
 import android.support.v7.widget.AppCompatTextView;
+import android.util.Log;
 import android.view.View;
+import android.widget.CompoundButton;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     private final AppCompatActivity activity = LoginActivity.this;
@@ -24,16 +26,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private AppCompatTextView textViewLinkRegister;
     private InputValidation inputValidation;
     private databaseHelper databaseHelper;
+
     private AppCompatCheckBox login_checkbox ;
-    public static int AutoLoginSign;
-    public static User LoginUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        AutoLoginSign = 0;
-        LoginUser = new User();
         initViews();
         initListeners();
         initObjects();
@@ -42,17 +41,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
      * This method is to initialize views
      */
     private void initViews() {
-
         nestedScrollView = (NestedScrollView) findViewById(R.id.nestedScrollView);
-
         textInputLayoutEmail = (TextInputLayout) findViewById(R.id.textInputLayoutEmail);
         textInputLayoutPassword = (TextInputLayout) findViewById(R.id.textInputLayoutPassword);
-
         textInputEditTextEmail = (TextInputEditText) findViewById(R.id.textInputEditTextEmail);
         textInputEditTextPassword = (TextInputEditText) findViewById(R.id.textInputEditTextPassword);
-
         appCompatButtonLogin = (AppCompatButton) findViewById(R.id.appCompatButtonLogin);
-
         textViewLinkRegister = (AppCompatTextView) findViewById(R.id.textViewLinkRegister);
         login_checkbox = (AppCompatCheckBox) findViewById(R.id.Auto_login);
     }
@@ -63,6 +57,18 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private void initListeners() {
         appCompatButtonLogin.setOnClickListener(this);
         textViewLinkRegister.setOnClickListener(this);
+        login_checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    Splash.AutoLoginChecked = 1;
+                    Log.d("msg", "tag");
+                } else {
+                    Splash.AutoLoginChecked = 0;
+                    Log.d("tag", "msg");
+                }
+            }
+        });
     }
 
     /**
@@ -85,17 +91,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 verifyFromSQLite();
                 break;
             case R.id.textViewLinkRegister:
-                // Navigate to RegisterActivity
                 Intent intentRegister = new Intent(getApplicationContext(), RegisterActivity.class);
                 startActivity(intentRegister);
                 break;
         }
-
-        if(login_checkbox.isChecked()){
-            AutoLoginSign = 1;
-        }
-        else
-            AutoLoginSign = 0;
     }
 
     /**
@@ -113,8 +112,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
 
         if (databaseHelper.checkUser(textInputEditTextEmail.getText().toString().trim() , textInputEditTextPassword.getText().toString().trim())) {
-
-
+            Splash.LoginUser = databaseHelper.SearchByEmail(textInputEditTextEmail.getText().toString().trim());
+            Splash.LoginUser.setAutologin(Splash.AutoLoginChecked);
+            databaseHelper.updateUser(Splash.LoginUser);
             Intent accountsIntent = new Intent(activity, MainPage.class);
             emptyInputEditText();
             startActivity(accountsIntent);
