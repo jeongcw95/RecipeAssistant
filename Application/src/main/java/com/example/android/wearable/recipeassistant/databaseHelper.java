@@ -282,15 +282,14 @@ public class databaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-
         values.put(COLUMN_USER_NAME, user.getName());
         values.put(COLUMN_USER_EMAIL, user.getEmail());
         values.put(COLUMN_USER_PASSWORD, user.getPassword());
         values.put(COLUMN_USER_AUTOLOGIN, user.getAutologin());
 
         // updating row
-        db.update(TABLE_USER, values, COLUMN_USER_ID + " = ?",
-                new String[]{String.valueOf(user.getId())});
+        db.update(TABLE_USER, values, COLUMN_USER_NAME + " = ?",
+                new String[]{String.valueOf(user.getName())});
         db.close();
     }
 
@@ -371,12 +370,6 @@ public class databaseHelper extends SQLiteOpenHelper {
                 null,                      //filter by row groups
                 null);                      //The sort order
         int cursorCount = cursor.getCount();
-        /*
-        Login_User.setId(Integer.parseInt(cursor.getString(cursor.getColumnIndex(COLUMN_USER_ID))));
-        Login_User.setName(cursor.getString(cursor.getColumnIndex(COLUMN_USER_NAME)));
-        Login_User.setEmail(cursor.getString(cursor.getColumnIndex(COLUMN_USER_EMAIL)));
-        Login_User.setPassword(cursor.getString(cursor.getColumnIndex(COLUMN_USER_PASSWORD)));
-        */
         cursor.close();
         db.close();
 
@@ -469,12 +462,35 @@ public class databaseHelper extends SQLiteOpenHelper {
         return false;
     }
 
-    public User CheckLoginUser(String email) {
+    public User CheckAutoLogin(int i){
+        String str_i = Integer.toString(i);
+        User returnUser = new User();
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selection = COLUMN_USER_AUTOLOGIN + " = ?";
+        String[] selectionArgs = {str_i};
+        Cursor cursor = db.query(TABLE_USER, //Table to query
+                null,                    //columns to return
+                selection,                  //columns for the WHERE clause
+                selectionArgs,              //The values for the WHERE clause
+                null,                       //group the rows
+                null,                      //filter by row groups
+                null);                      //The sort order
+        int cursor_count = cursor.getCount();
+        if(cursor_count >0 && cursor.moveToNext()){
+            returnUser.setName(cursor.getString(cursor.getColumnIndex(COLUMN_USER_NAME)));
+            returnUser.setEmail(cursor.getString(cursor.getColumnIndex(COLUMN_USER_EMAIL)));
+            returnUser.setPassword(cursor.getString(cursor.getColumnIndex(COLUMN_USER_PASSWORD)));
+            returnUser.setAutologin(Splash.AutoLoginChecked);
+            return returnUser;
+        }
+        else
+            return null;
+    }
+
+
+    public User SearchByEmail(String email) {
         User returnUser = new User();
         // array of columns to fetch
-        String[] columns = {
-                COLUMN_USER_ID
-        };
         SQLiteDatabase db = this.getReadableDatabase();
 
         // selection criteria
@@ -490,23 +506,21 @@ public class databaseHelper extends SQLiteOpenHelper {
          * SELECT user_id FROM user WHERE user_email = 'jack@androidtutorialshub.com';
          */
         Cursor cursor = db.query(TABLE_USER, //Table to query
-                columns,                    //columns to return
+               null,                    //columns to return
                 selection,                  //columns for the WHERE clause
                 selectionArgs,              //The values for the WHERE clause
                 null,                       //group the rows
                 null,                      //filter by row groups
                 null);                      //The sort order
-        int cursorposition = cursor.getPosition();
-        cursor.moveToNext();
-
-        returnUser.setName(cursor.getString(cursor.getColumnIndex(COLUMN_USER_NAME)));
-        returnUser.setEmail(cursor.getString(cursor.getColumnIndex(COLUMN_USER_EMAIL)));
-        returnUser.setPassword(cursor.getString(cursor.getColumnIndex(COLUMN_USER_PASSWORD)));
-        returnUser.setAutologin(LoginActivity.AutoLoginSign);
-
+        if(cursor.moveToNext()){
+            // returnUser.setId(cursor.getColumnIndex(COLUMN_USER_ID));
+            returnUser.setName(cursor.getString(cursor.getColumnIndex(COLUMN_USER_NAME)));
+            returnUser.setEmail(cursor.getString(cursor.getColumnIndex(COLUMN_USER_EMAIL)));
+            returnUser.setPassword(cursor.getString(cursor.getColumnIndex(COLUMN_USER_PASSWORD)));
+            returnUser.setAutologin(Splash.AutoLoginChecked);
+        }
         cursor.close();
         db.close();
-
         return returnUser;
     }
 }

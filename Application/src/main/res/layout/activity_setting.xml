@@ -29,7 +29,7 @@
     </android.support.v7.widget.LinearLayoutCompat>
 
     <Switch
-        android:id="@+id/switch1"
+        android:id="@+id/autologinswitch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -37,5 +37,17 @@
         android:switchMinWidth="70dp"
         android:text="AUTO LOGIN"
         android:visibility="visible" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/saveButton"
+        android:layout_marginTop = "400dp"
+        android:text = "SAVE"
+        android:visibility = "visible"
+        android:layout_gravity="center"
+        android:onClick="onClickedSaveButton"
+        />
+
 
 </LinearLayout>
