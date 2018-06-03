@@ -36,6 +36,16 @@ public class Recipe {
     public String steps;
     public int id;
 
+    public int getIsFavorite() {
+        return isFavorite;
+    }
+
+    public void setIsFavorite(int isFavorite) {
+        this.isFavorite = isFavorite;
+    }
+
+    public int isFavorite = 0;
+
     public Recipe(){
         //
     }

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,24 +68,36 @@ class RecipeViewHolder extends RecyclerView.ViewHolder implements View.OnClickLi
 
 
 public class RecipeRecyclerAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
+
+
+
     protected Context context;
     private List<Recipe> listRecipe;
     protected static Recipe R_position;
+    private databaseHelper databaseHelper;
+    private Favorite favorite;
+    private User user;
 
     public RecipeRecyclerAdapter(List<Recipe> listRecipe, Context context) {
         this.listRecipe = listRecipe;
         this.context = context;
     }
+    private void initObjects() {
+        databaseHelper = new databaseHelper(context);
+        favorite = new Favorite();
+        user = new User();
+    }
+
     @Override
     public RecipeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View itemView = inflater.inflate(R.layout.recipe_recycler, parent, false);
-
+        initObjects();
         return new RecipeViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(RecipeViewHolder holder, int position) {
+    public void onBindViewHolder(final RecipeViewHolder holder, int position) {
         holder.textViewTitle.setText(listRecipe.get(position).getTitleText());
         holder.textViewIngredients.setText(listRecipe.get(position).getIngredientsText());
         holder.textViewSummary.setText(listRecipe.get(position).getSummaryText());
@@ -95,7 +108,12 @@ public class RecipeRecyclerAdapter extends RecyclerView.Adapter<RecipeViewHolder
                 R_position = listRecipe.get(position);
                 if (isLong) {
                     Toast.makeText(context, "즐겨찾기에 추가되었습니다", Toast.LENGTH_LONG).show();
-                    FavoriteActivity.FAVORITE_LIST.add(R_position.getTitleText());
+//                    FavoriteActivity.FAVORITE_LIST.add(R_position.getTitleText());
+                    listRecipe.get(position).setIsFavorite(1);
+                    databaseHelper.updateRecipe(listRecipe.get(position));
+                    favorite.setUser_id(user.getId());
+                    favorite.setRecipe_title(String.valueOf(R_position.getTitleText()));
+                    databaseHelper.addFavorite(favorite);
                 }
                 else{
                     // Toast.makeText(context, "Short touch", Toast.LENGTH_LONG).show();

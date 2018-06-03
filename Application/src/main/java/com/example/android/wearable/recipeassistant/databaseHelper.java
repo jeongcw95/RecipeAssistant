@@ -33,6 +33,7 @@ public class databaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_RECIPE_SUMMARY = "recipe_summary";
     private static final String COLUMN_RECIPE_INGREDIENTS = "recipe_ingredients";
     private static final String COLUMN_RECIPE_STEP = "recipe_steps";
+    private static final String COLUMN_RECIPE_ISFAVORITE = "recipe_isfavorite";
 
     private static final String TABLE_FAVORITE = "favorite";
 
@@ -43,10 +44,11 @@ public class databaseHelper extends SQLiteOpenHelper {
 
     private String CREATE_RECIPE_TABLE = "CREATE TABLE " + TABLE_RECIPE + "("
             + COLUMN_RECIPE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_RECIPE_TITLE + " TEXT,"
-            + COLUMN_RECIPE_SUMMARY + " TEXT," + COLUMN_RECIPE_INGREDIENTS + " TEXT," + COLUMN_RECIPE_STEP + " TEXT" + ")";
+            + COLUMN_RECIPE_SUMMARY + " TEXT," + COLUMN_RECIPE_INGREDIENTS + " TEXT," + COLUMN_RECIPE_STEP + " TEXT,"
+            + COLUMN_RECIPE_ISFAVORITE + " INTEGER" + ")";
 
     private String CREATE_FAVORITE_TABLE = "CREATE TABLE " + TABLE_FAVORITE + "("
-            + COLUMN_USER_ID + " INTEGER PRIMARY KEY," + COLUMN_RECIPE_TITLE + " TEXT" + ")";
+            + COLUMN_USER_ID + " INTEGER," + COLUMN_RECIPE_TITLE + " TEXT PRIMARY KEY" + ")";
     // drop table sql query
     private String DROP_USER_TABLE = "DROP TABLE IF EXISTS " + TABLE_USER;
 
@@ -108,18 +110,18 @@ public class databaseHelper extends SQLiteOpenHelper {
         values.put(COLUMN_RECIPE_SUMMARY, recipe.getSummaryText());
         values.put(COLUMN_RECIPE_INGREDIENTS, recipe.getIngredientsText());
         values.put(COLUMN_RECIPE_STEP, recipe.getSteps());
-
+        values.put(COLUMN_RECIPE_ISFAVORITE, recipe.getIsFavorite());
         // Inserting Row
         db.insert(TABLE_RECIPE, null, values);
         db.close();
     }
 
-    public void addFavorite(User user, Recipe recipe) {
+    public void addFavorite(Favorite favorite) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(COLUMN_USER_ID, user.getId());
-        values.put(COLUMN_RECIPE_TITLE, recipe.getTitleText());
+        values.put(COLUMN_USER_ID, favorite.getUser_id());
+        values.put(COLUMN_RECIPE_TITLE, favorite.getRecipe_title());
 
         // Inserting Row
         db.insert(TABLE_FAVORITE, null, values);
@@ -185,7 +187,8 @@ public class databaseHelper extends SQLiteOpenHelper {
                 COLUMN_RECIPE_TITLE,
                 COLUMN_RECIPE_SUMMARY,
                 COLUMN_RECIPE_INGREDIENTS,
-                COLUMN_RECIPE_STEP
+                COLUMN_RECIPE_STEP,
+                COLUMN_RECIPE_ISFAVORITE
         };
         // sorting orders
         String sortOrder =
@@ -217,7 +220,7 @@ public class databaseHelper extends SQLiteOpenHelper {
                 recipe.setSummaryText(cursor.getString(cursor.getColumnIndex(COLUMN_RECIPE_SUMMARY)));
                 recipe.setIngredientsText(cursor.getString(cursor.getColumnIndex(COLUMN_RECIPE_INGREDIENTS)));
                 recipe.setSteps(cursor.getString(cursor.getColumnIndex(COLUMN_RECIPE_STEP)));
-
+                recipe.setId(Integer.parseInt(cursor.getString(cursor.getColumnIndex(COLUMN_RECIPE_ISFAVORITE))));
                 // Adding user record to list
                 recipeList.add(recipe);
             } while (cursor.moveToNext());
@@ -302,7 +305,7 @@ public class databaseHelper extends SQLiteOpenHelper {
         values.put(COLUMN_RECIPE_SUMMARY, recipe.getSummaryText());
         values.put(COLUMN_RECIPE_INGREDIENTS, recipe.getIngredientsText());
         values.put(COLUMN_RECIPE_STEP, recipe.getSteps());
-
+        values.put(COLUMN_RECIPE_ISFAVORITE, recipe.getIsFavorite());
         // updating row
         db.update(TABLE_RECIPE, values, COLUMN_RECIPE_TITLE + " = ?",
                 new String[]{String.valueOf(recipe.getTitleText())});

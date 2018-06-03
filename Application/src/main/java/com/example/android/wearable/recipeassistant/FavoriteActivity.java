@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -19,26 +20,54 @@ import com.baoyz.swipemenulistview.SwipeMenuItem;
 import com.baoyz.swipemenulistview.SwipeMenuListView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static android.content.ContentValues.TAG;
 
 public class FavoriteActivity extends Activity {
     public static SwipeMenuListView FavoriteListView;
-    static final ArrayList<String> FAVORITE_LIST = new ArrayList<String>();
+    public Activity activity = FavoriteActivity.this;
+//    static final ArrayList<String> FAVORITE_LIST;
+    public databaseHelper databaseHelper;
     public static ArrayAdapter adapter1;
-
+    public List<Favorite> listFavorite;
     public void goList() {
         Intent intent = new Intent(this, RecipeListActivity.class);
         startActivity(intent);
     }
+    private void initObjects() {
+        listFavorite = new ArrayList<>();
+        databaseHelper = new databaseHelper(activity);
 
+        getDataFromSQLite();
+    }
+    /**
+     * This method is to fetch all user records from SQLite
+     */
+    private void getDataFromSQLite() {
+        // AsyncTask is used that SQLite operation not blocks the UI Thread.
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... params) {
+                listFavorite.clear();
+                listFavorite.addAll(databaseHelper.getAllFavorite());
+
+                return null;
+            }
+            @Override
+            protected void onPostExecute(Void aVoid) {
+                super.onPostExecute(aVoid);
+            }
+        }.execute();
+    }
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.favorite);
+        initObjects();
 
         FavoriteListView = (SwipeMenuListView) findViewById(R.id.FavoriteList);
-
-        adapter1 = new ArrayAdapter(this, android.R.layout.simple_list_item_1, FAVORITE_LIST);
+//        adapter1 = new ArrayAdapter(this, android.R.layout.simple_list_item_1, FAVORITE_LIST);
+        adapter1 = new ArrayAdapter(this, android.R.layout.simple_list_item_1, databaseHelper.getAllFavorite());
         FavoriteListView.setAdapter(adapter1);
 
         SwipeMenuCreator creator = new SwipeMenuCreator() {
@@ -104,7 +133,8 @@ public class FavoriteActivity extends Activity {
                         break;
                     case 1:
                         Log.d(TAG, "Close button Execute");
-                        FAVORITE_LIST.remove(position);
+//                        FAVORITE_LIST.remove(position);
+                        databaseHelper.deleteFavorite(listFavorite.get(position));
                         adapter1.notifyDataSetChanged();
                         recreate();
                         break;
