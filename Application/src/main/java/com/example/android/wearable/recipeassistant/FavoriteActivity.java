@@ -142,6 +142,7 @@ public class FavoriteActivity extends Activity {
                                 intent.putExtra("ingredient", listRecipe.get(position).getIngredientsText());
                                 intent.putExtra("summary", listRecipe.get(position).getSummaryText());
                                 intent.putExtra("steps", listRecipe.get(position).getSteps());
+                                intent.putExtra("image", listRecipe.get(position).getPicture());
                                 break;
                             }
                         }

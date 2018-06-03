@@ -28,14 +28,14 @@ public class RecipeDetailActivity extends AppCompatActivity {
         Ingredient = (TextView)findViewById(R.id.DetailIngredient);
         Summary = (TextView)findViewById(R.id.DetailSummary);
         Steps = (TextView)findViewById(R.id.DetailSteps);
-       // RecipeImageView = (AppCompatImageView) findViewById(R.id.RecipeImageView);
+        RecipeImageView = (AppCompatImageView) findViewById(R.id.RecipeImageView);
 
         Title.setText(getIntent().getStringExtra("title"));
         Ingredient.setText(getIntent().getStringExtra("ingredient"));
         Summary.setText(getIntent().getStringExtra("summary"));
         Steps.setText(getIntent().getStringExtra("steps"));
-//        btarr = getIntent().getByteArrayExtra("image");
-//        bt = BitmapFactory.decodeByteArray(btarr, 0, btarr.length);
-//        RecipeImageView.setImageBitmap(bt);
+        btarr = getIntent().getByteArrayExtra("image");
+        bt = BitmapFactory.decodeByteArray(btarr, 0, btarr.length);
+        RecipeImageView.setImageBitmap(bt);
     }
 }

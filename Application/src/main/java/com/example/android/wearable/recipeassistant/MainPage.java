@@ -40,7 +40,7 @@ public class MainPage extends Activity {
             Calendar calendar = Calendar.getInstance();
             //알람시간 calendar에 set해주기
 
-            calendar.set(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DATE), 18, 0, 0);
+            calendar.set(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DATE), 18, 37, 0);
 
             //알람 예약
             am.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), sender);

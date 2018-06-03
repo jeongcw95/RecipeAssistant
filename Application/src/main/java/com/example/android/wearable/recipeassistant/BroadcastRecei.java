@@ -28,7 +28,7 @@ public class BroadcastRecei extends BroadcastReceiver {
             PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, new Intent(context, MainPage.class), PendingIntent.FLAG_UPDATE_CURRENT);
             Notification.Builder builder = new Notification.Builder(context);
             builder.setSmallIcon(R.drawable.logo).setTicker("HETT").setWhen(System.currentTimeMillis())
-                    .setNumber(1).setContentTitle("RecipeAssistant").setContentText("오늘은 하루도 즐거운 하루 되세요!")
+                    .setNumber(1).setContentTitle("RecipeAssistant").setContentText("오늘 하루도 즐거운 하루 되세요!")
                     .setDefaults(Notification.DEFAULT_SOUND | Notification.DEFAULT_VIBRATE).setContentIntent(pendingIntent).setAutoCancel(true).setPriority(Notification.PRIORITY_MAX);
 
             notificationmanager.notify(1, builder.build());
