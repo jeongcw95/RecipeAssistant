@@ -67,26 +67,26 @@ public final class R {
         public static final int layout_optimizationLevel = 0x7f0200f6;
     }
     public static final class id {
-        public static final int barrier = 0x7f07002d;
-        public static final int bottom = 0x7f070030;
-        public static final int chains = 0x7f070039;
-        public static final int dimensions = 0x7f070049;
-        public static final int direct = 0x7f07004a;
-        public static final int end = 0x7f07004d;
-        public static final int gone = 0x7f070059;
-        public static final int invisible = 0x7f070063;
-        public static final int left = 0x7f070066;
-        public static final int none = 0x7f070075;
-        public static final int packed = 0x7f07007a;
-        public static final int parent = 0x7f07007c;
-        public static final int percent = 0x7f07007e;
-        public static final int right = 0x7f07008c;
-        public static final int spread = 0x7f0700aa;
-        public static final int spread_inside = 0x7f0700ab;
-        public static final int standard = 0x7f0700af;
-        public static final int start = 0x7f0700b0;
-        public static final int top = 0x7f0700d5;
-        public static final int wrap = 0x7f0700dd;
+        public static final int barrier = 0x7f070030;
+        public static final int bottom = 0x7f070033;
+        public static final int chains = 0x7f07003c;
+        public static final int dimensions = 0x7f07004c;
+        public static final int direct = 0x7f07004d;
+        public static final int end = 0x7f070050;
+        public static final int gone = 0x7f07005c;
+        public static final int invisible = 0x7f070066;
+        public static final int left = 0x7f070069;
+        public static final int none = 0x7f070078;
+        public static final int packed = 0x7f07007d;
+        public static final int parent = 0x7f07007f;
+        public static final int percent = 0x7f070081;
+        public static final int right = 0x7f07008f;
+        public static final int spread = 0x7f0700ad;
+        public static final int spread_inside = 0x7f0700ae;
+        public static final int standard = 0x7f0700b2;
+        public static final int start = 0x7f0700b3;
+        public static final int top = 0x7f0700d8;
+        public static final int wrap = 0x7f0700e0;
     }
     public static final class styleable {
         public static final int[] ConstraintLayout_Layout = { 0x010100c4, 0x0101011f, 0x01010120, 0x0101013f, 0x01010140, 0x7f020037, 0x7f020038, 0x7f020051, 0x7f020066, 0x7f020067, 0x7f0200c4, 0x7f0200c5, 0x7f0200c6, 0x7f0200c7, 0x7f0200c8, 0x7f0200c9, 0x7f0200ca, 0x7f0200cb, 0x7f0200cc, 0x7f0200cd, 0x7f0200ce, 0x7f0200cf, 0x7f0200d0, 0x7f0200d1, 0x7f0200d2, 0x7f0200d3, 0x7f0200d4, 0x7f0200d5, 0x7f0200d6, 0x7f0200d7, 0x7f0200d8, 0x7f0200d9, 0x7f0200da, 0x7f0200db, 0x7f0200dc, 0x7f0200dd, 0x7f0200de, 0x7f0200df, 0x7f0200e0, 0x7f0200e1, 0x7f0200e2, 0x7f0200e3, 0x7f0200e4, 0x7f0200e5, 0x7f0200e6, 0x7f0200e7, 0x7f0200e8, 0x7f0200e9, 0x7f0200ea, 0x7f0200eb, 0x7f0200ec, 0x7f0200ed, 0x7f0200ee, 0x7f0200ef, 0x7f0200f0, 0x7f0200f1, 0x7f0200f2, 0x7f0200f3, 0x7f0200f4, 0x7f0200f6 };

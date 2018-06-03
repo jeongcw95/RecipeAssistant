@@ -1,4 +1,4 @@
-#Mon Jun 04 03:23:41 KST 2018
-base.0=C\:\\Users\\Sweng\\Desktop\\moblie\\RecipeAssistant\\Application\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+#Mon Jun 04 04:40:26 KST 2018
+base.0=C\:\\Users\\CH\\Desktop\\3-1\\anpr\\RecipeAssistant\\RecipeAssistant\\Application\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex

@@ -5,9 +5,18 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 
+import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.example.android.wearable.recipeassistant.RecipeRegisterActivity.U_path;
 
 public class databaseHelper extends SQLiteOpenHelper {
 
@@ -34,6 +43,7 @@ public class databaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_RECIPE_INGREDIENTS = "recipe_ingredients";
     private static final String COLUMN_RECIPE_STEP = "recipe_steps";
     private static final String COLUMN_RECIPE_ISFAVORITE = "recipe_isfavorite";
+    private static final String COLUMN_RECIPE_PHOTO = "recipe_photo";
 
     private static final String TABLE_FAVORITE = "favorite";
 
@@ -45,7 +55,7 @@ public class databaseHelper extends SQLiteOpenHelper {
     private String CREATE_RECIPE_TABLE = "CREATE TABLE " + TABLE_RECIPE + "("
             + COLUMN_RECIPE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_RECIPE_TITLE + " TEXT,"
             + COLUMN_RECIPE_SUMMARY + " TEXT," + COLUMN_RECIPE_INGREDIENTS + " TEXT," + COLUMN_RECIPE_STEP + " TEXT,"
-            + COLUMN_RECIPE_ISFAVORITE + " INTEGER" + ")";
+            + COLUMN_RECIPE_ISFAVORITE + " INTEGER," + COLUMN_RECIPE_PHOTO + " BLOB" + ")";
 
     private String CREATE_FAVORITE_TABLE = "CREATE TABLE " + TABLE_FAVORITE + "("
             + COLUMN_USER_ID + " INTEGER," + COLUMN_RECIPE_TITLE + " TEXT PRIMARY KEY" + ")";
@@ -55,6 +65,7 @@ public class databaseHelper extends SQLiteOpenHelper {
     private String DROP_RECIPE_TABLE = "DROP TABLE IF EXISTS " + TABLE_RECIPE;
 
     private String DROP_FAVORITE_TABLE = "DROP TABLE IF EXISTS " + TABLE_FAVORITE;
+
     /**
      * Constructor
      *
@@ -110,6 +121,15 @@ public class databaseHelper extends SQLiteOpenHelper {
         values.put(COLUMN_RECIPE_INGREDIENTS, recipe.getIngredientsText());
         values.put(COLUMN_RECIPE_STEP, recipe.getSteps());
         values.put(COLUMN_RECIPE_ISFAVORITE, recipe.getIsFavorite());
+        try {
+            FileInputStream fs = new FileInputStream(U_path);
+            byte[] imgbyte = new byte[fs.available()];
+            fs.read(imgbyte);
+            values.put(COLUMN_RECIPE_PHOTO, imgbyte);
+            fs.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         // Inserting Row
         db.insert(TABLE_RECIPE, null, values);
         db.close();
@@ -126,6 +146,7 @@ public class databaseHelper extends SQLiteOpenHelper {
         db.insert(TABLE_FAVORITE, null, values);
         db.close();
     }
+
     /**
      * This method is to fetch all user and return the list of user records
      *
@@ -187,7 +208,8 @@ public class databaseHelper extends SQLiteOpenHelper {
                 COLUMN_RECIPE_SUMMARY,
                 COLUMN_RECIPE_INGREDIENTS,
                 COLUMN_RECIPE_STEP,
-                COLUMN_RECIPE_ISFAVORITE
+                COLUMN_RECIPE_ISFAVORITE,
+                COLUMN_RECIPE_PHOTO
         };
         // sorting orders
         String sortOrder =
@@ -220,6 +242,7 @@ public class databaseHelper extends SQLiteOpenHelper {
                 recipe.setIngredientsText(cursor.getString(cursor.getColumnIndex(COLUMN_RECIPE_INGREDIENTS)));
                 recipe.setSteps(cursor.getString(cursor.getColumnIndex(COLUMN_RECIPE_STEP)));
                 recipe.setIsFavorite(Integer.parseInt(cursor.getString(cursor.getColumnIndex(COLUMN_RECIPE_ISFAVORITE))));
+                recipe.setPicture(cursor.getBlob(6));
                 // Adding user record to list
                 recipeList.add(recipe);
             } while (cursor.moveToNext());
@@ -230,6 +253,7 @@ public class databaseHelper extends SQLiteOpenHelper {
         // return user list
         return recipeList;
     }
+
     public List<Favorite> getAllFavorite() {
         // array of columns to fetch
         String[] columns = {
@@ -263,8 +287,6 @@ public class databaseHelper extends SQLiteOpenHelper {
                 Favorite favorite = new Favorite();
                 favorite.setUser_id(Integer.parseInt(cursor.getString(cursor.getColumnIndex(COLUMN_USER_ID))));
                 favorite.setRecipe_title(cursor.getString(cursor.getColumnIndex(COLUMN_RECIPE_TITLE)));
-
-
                 // Adding user record to list
                 favoriteList.add(favorite);
             } while (cursor.moveToNext());
@@ -323,6 +345,7 @@ public class databaseHelper extends SQLiteOpenHelper {
                 new String[]{String.valueOf(user.getId())});
         db.close();
     }
+
     public void deleteRecipe(Recipe recipe) {
         SQLiteDatabase db = this.getWritableDatabase();
         // delete user record by id
@@ -427,6 +450,7 @@ public class databaseHelper extends SQLiteOpenHelper {
 
         return false;
     }
+
     public boolean checkRecipe(String title) {
 
         // array of columns to fetch
@@ -465,7 +489,7 @@ public class databaseHelper extends SQLiteOpenHelper {
         return false;
     }
 
-    public User CheckAutoLogin(int i){
+    public User CheckAutoLogin(int i) {
         String str_i = Integer.toString(i);
         User returnUser = new User();
         SQLiteDatabase db = this.getReadableDatabase();
@@ -480,18 +504,17 @@ public class databaseHelper extends SQLiteOpenHelper {
                 null,                      //filter by row groups
                 null);                      //The sort order
         int cursor_count = cursor.getCount();
-        if(cursor_count >0 && cursor.moveToNext()){
+        if (cursor_count > 0 && cursor.moveToNext()) {
             returnUser.setName(cursor.getString(cursor.getColumnIndex(COLUMN_USER_NAME)));
             returnUser.setEmail(cursor.getString(cursor.getColumnIndex(COLUMN_USER_EMAIL)));
             returnUser.setPassword(cursor.getString(cursor.getColumnIndex(COLUMN_USER_PASSWORD)));
             returnUser.setAutologin(Splash.AutoLoginChecked);
             return returnUser;
-        }
-        else
+        } else
             return null;
     }
 
-    public List<Recipe> CheckNotFavorite(int i){
+    public List<Recipe> CheckNotFavorite(int i) {
         String str_i = Integer.toString(i);
         List<Recipe> notFavorite = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
@@ -500,14 +523,14 @@ public class databaseHelper extends SQLiteOpenHelper {
         String selection = COLUMN_RECIPE_ISFAVORITE + " = ?";
         String[] selectionArgs = {str_i};
         Cursor cursor = db.query(TABLE_RECIPE, //Table to query
-               null,                    //columns to return
+                null,                    //columns to return
                 selection,                  //columns for the WHERE clause
                 selectionArgs,              //The values for the WHERE clause
                 null,                       //group the rows
                 null,                      //filter by row groups
                 null);
         int cursor_count = cursor.getCount();
-        while(cursor_count >0 && cursor.moveToNext()){
+        while (cursor_count > 0 && cursor.moveToNext()) {
             recipe.setId(Integer.parseInt(cursor.getString(cursor.getColumnIndex(COLUMN_RECIPE_ID))));
             recipe.setTitleText(cursor.getString(cursor.getColumnIndex(COLUMN_RECIPE_TITLE)));
             recipe.setSummaryText(cursor.getString(cursor.getColumnIndex(COLUMN_RECIPE_SUMMARY)));
@@ -538,13 +561,13 @@ public class databaseHelper extends SQLiteOpenHelper {
          * SELECT user_id FROM user WHERE user_email = 'jack@androidtutorialshub.com';
          */
         Cursor cursor = db.query(TABLE_USER, //Table to query
-               null,                    //columns to return
+                null,                    //columns to return
                 selection,                  //columns for the WHERE clause
                 selectionArgs,              //The values for the WHERE clause
                 null,                       //group the rows
                 null,                      //filter by row groups
                 null);                      //The sort order
-        if(cursor.moveToNext()){
+        if (cursor.moveToNext()) {
             // returnUser.setId(cursor.getColumnIndex(COLUMN_USER_ID));
             returnUser.setName(cursor.getString(cursor.getColumnIndex(COLUMN_USER_NAME)));
             returnUser.setEmail(cursor.getString(cursor.getColumnIndex(COLUMN_USER_EMAIL)));
@@ -555,4 +578,18 @@ public class databaseHelper extends SQLiteOpenHelper {
         db.close();
         return returnUser;
     }
+
+
+    // read image
+    public Bitmap getimage(Integer id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Bitmap bt = null;
+        Cursor cursor = db.rawQuery("select * from images where id=?", new String[]{String.valueOf(id)});
+        if(cursor.moveToNext()){
+            byte[] imag = cursor.getBlob(6);
+            bt = BitmapFactory.decodeByteArray(imag, 0, imag.length);
+        }
+        return bt;
+    }
+
 }

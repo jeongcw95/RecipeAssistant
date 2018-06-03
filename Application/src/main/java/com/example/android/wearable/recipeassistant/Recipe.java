@@ -17,6 +17,7 @@
 package com.example.android.wearable.recipeassistant;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.Log;
@@ -35,6 +36,7 @@ public class Recipe {
     public String ingredientsText;
     public String steps;
     public int id;
+    private byte[] picture;
 
     public int getIsFavorite() {
         return isFavorite;
@@ -87,4 +89,9 @@ public class Recipe {
     public void setSteps(String steps) {
         this.steps = steps;
     }
+
+    public byte[] getPicture() {  return picture;  }
+
+    public void setPicture(byte[] b) {  this.picture = b;  }
+
 }
