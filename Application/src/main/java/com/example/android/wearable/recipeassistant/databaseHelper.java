@@ -219,7 +219,7 @@ public class databaseHelper extends SQLiteOpenHelper {
                 recipe.setSummaryText(cursor.getString(cursor.getColumnIndex(COLUMN_RECIPE_SUMMARY)));
                 recipe.setIngredientsText(cursor.getString(cursor.getColumnIndex(COLUMN_RECIPE_INGREDIENTS)));
                 recipe.setSteps(cursor.getString(cursor.getColumnIndex(COLUMN_RECIPE_STEP)));
-                recipe.setId(Integer.parseInt(cursor.getString(cursor.getColumnIndex(COLUMN_RECIPE_ISFAVORITE))));
+                recipe.setIsFavorite(Integer.parseInt(cursor.getString(cursor.getColumnIndex(COLUMN_RECIPE_ISFAVORITE))));
                 // Adding user record to list
                 recipeList.add(recipe);
             } while (cursor.moveToNext());
@@ -275,6 +275,7 @@ public class databaseHelper extends SQLiteOpenHelper {
         // return user list
         return favoriteList;
     }
+
     /**
      * This method to update user record
      *
@@ -468,6 +469,7 @@ public class databaseHelper extends SQLiteOpenHelper {
         String str_i = Integer.toString(i);
         User returnUser = new User();
         SQLiteDatabase db = this.getReadableDatabase();
+
         String selection = COLUMN_USER_AUTOLOGIN + " = ?";
         String[] selectionArgs = {str_i};
         Cursor cursor = db.query(TABLE_USER, //Table to query
@@ -487,6 +489,34 @@ public class databaseHelper extends SQLiteOpenHelper {
         }
         else
             return null;
+    }
+
+    public List<Recipe> CheckNotFavorite(int i){
+        String str_i = Integer.toString(i);
+        List<Recipe> notFavorite = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Recipe recipe = new Recipe();
+
+        String selection = COLUMN_RECIPE_ISFAVORITE + " = ?";
+        String[] selectionArgs = {str_i};
+        Cursor cursor = db.query(TABLE_RECIPE, //Table to query
+               null,                    //columns to return
+                selection,                  //columns for the WHERE clause
+                selectionArgs,              //The values for the WHERE clause
+                null,                       //group the rows
+                null,                      //filter by row groups
+                null);
+        int cursor_count = cursor.getCount();
+        while(cursor_count >0 && cursor.moveToNext()){
+            recipe.setId(Integer.parseInt(cursor.getString(cursor.getColumnIndex(COLUMN_RECIPE_ID))));
+            recipe.setTitleText(cursor.getString(cursor.getColumnIndex(COLUMN_RECIPE_TITLE)));
+            recipe.setSummaryText(cursor.getString(cursor.getColumnIndex(COLUMN_RECIPE_SUMMARY)));
+            recipe.setIngredientsText(cursor.getString(cursor.getColumnIndex(COLUMN_RECIPE_INGREDIENTS)));
+            recipe.setSteps(cursor.getString(cursor.getColumnIndex(COLUMN_RECIPE_STEP)));
+            recipe.setIsFavorite(Integer.parseInt(cursor.getString(cursor.getColumnIndex(COLUMN_RECIPE_ISFAVORITE))));
+            notFavorite.add(recipe);
+        }
+        return notFavorite;
     }
 
 

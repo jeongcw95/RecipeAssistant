@@ -19,6 +19,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.android.wearable.recipeassistant.RecipeRecyclerAdapter.R_position;
+
 
 public class RecipeListActivity extends AppCompatActivity {
 
@@ -31,6 +33,8 @@ public class RecipeListActivity extends AppCompatActivity {
     public AppCompatButton Modify;
     public AppCompatButton Delete;
     public static boolean isClicked = false;
+    private Favorite favorite;
+    private User user;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -67,6 +71,8 @@ public class RecipeListActivity extends AppCompatActivity {
         recyclerViewRecipe.setHasFixedSize(true);
         recyclerViewRecipe.setAdapter(recipeRecyclerAdapter);
         databaseHelper = new databaseHelper(activity);
+        favorite = new Favorite();
+        user = new User();
 
         getDataFromSQLite();
     }
@@ -103,20 +109,28 @@ public class RecipeListActivity extends AppCompatActivity {
 
     public void recipeModifyClicked(View view){
         Intent intent = new Intent(this, RecipeModifyActivity.class);
-        intent.putExtra("title", RecipeRecyclerAdapter.R_position.getTitleText());
-        intent.putExtra("ingredients", RecipeRecyclerAdapter.R_position.getIngredientsText());
-        intent.putExtra("summary", RecipeRecyclerAdapter.R_position.getSummaryText());
-        intent.putExtra("steps", RecipeRecyclerAdapter.R_position.getSteps());
+        intent.putExtra("title", R_position.getTitleText());
+        intent.putExtra("ingredients", R_position.getIngredientsText());
+        intent.putExtra("summary", R_position.getSummaryText());
+        intent.putExtra("steps", R_position.getSteps());
         startActivity(intent);
     }
 
     public void recipeDeleteClicked(View view){
-        databaseHelper.deleteRecipe(RecipeRecyclerAdapter.R_position);
+        databaseHelper.deleteRecipe(R_position);
         recreate();
     }
 
     public void FavoriteClicked(View view){
-        Toast.makeText(this, "WHAT THE FUCK", Toast.LENGTH_LONG).show();
+
+        Toast.makeText(this, "즐겨찾기에 추가되었습니다", Toast.LENGTH_LONG).show();
+//                  FavoriteActivity.FAVORITE_LIST.add(R_position.getTitleText());
+        R_position.setIsFavorite(1);
+        databaseHelper.updateRecipe(R_position);
+        favorite.setUser_id(user.getId());
+        favorite.setRecipe_title(String.valueOf(R_position.getTitleText()));
+        databaseHelper.addFavorite(favorite);
+
     }
 
     private void goDetail(){

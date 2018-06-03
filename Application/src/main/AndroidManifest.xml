@@ -23,6 +23,8 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:allowBackup="true"
@@ -62,6 +64,11 @@
             android:label="즐겨찾기"
             android:theme="@android:style/Theme.Holo.Light" />
         <activity android:name=".SettingActivity" />
+
+        <receiver
+            android:name=".BroadcastRecei"
+            android:enabled="true"
+            android:exported="true"></receiver>
 
         <activity android:name=".RecipeDetailActivity"></activity>
     </application>

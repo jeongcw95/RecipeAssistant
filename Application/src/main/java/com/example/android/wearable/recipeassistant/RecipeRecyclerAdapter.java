@@ -126,15 +126,6 @@ public class RecipeRecyclerAdapter extends RecyclerView.Adapter<RecipeViewHolder
                     intent.putExtra("steps", listRecipe.get(position).getSteps());
                     context.startActivity(intent);
 
-                    /*
-                    Toast.makeText(context, "즐겨찾기에 추가되었습니다", Toast.LENGTH_LONG).show();
-//                  FavoriteActivity.FAVORITE_LIST.add(R_position.getTitleText());
-                    listRecipe.get(position).setIsFavorite(1);
-                    databaseHelper.updateRecipe(listRecipe.get(position));
-                    favorite.setUser_id(user.getId());
-                    favorite.setRecipe_title(String.valueOf(R_position.getTitleText()));
-                    databaseHelper.addFavorite(favorite);
-                    */
                 }
                 else{
                     // Toast.makeText(context, "Short touch", Toast.LENGTH_LONG).show();

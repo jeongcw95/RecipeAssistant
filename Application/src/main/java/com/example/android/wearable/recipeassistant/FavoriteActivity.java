@@ -1,6 +1,7 @@
 package com.example.android.wearable.recipeassistant;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -23,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static android.content.ContentValues.TAG;
+import static com.example.android.wearable.recipeassistant.RecipeRecyclerAdapter.R_position;
 
 public class FavoriteActivity extends Activity {
     public static SwipeMenuListView FavoriteListView;
@@ -31,12 +33,12 @@ public class FavoriteActivity extends Activity {
     public databaseHelper databaseHelper;
     public static ArrayAdapter adapter1;
     public List<Favorite> listFavorite;
-    public void goList() {
-        Intent intent = new Intent(this, RecipeListActivity.class);
-        startActivity(intent);
-    }
+    public List<Recipe> listRecipe;
+    public List<String> listFavoriteName = new ArrayList<>();
+
     private void initObjects() {
         listFavorite = new ArrayList<>();
+        listRecipe = new ArrayList<>();
         databaseHelper = new databaseHelper(activity);
 
         getDataFromSQLite();
@@ -51,7 +53,12 @@ public class FavoriteActivity extends Activity {
             protected Void doInBackground(Void... params) {
                 listFavorite.clear();
                 listFavorite.addAll(databaseHelper.getAllFavorite());
+                listRecipe.clear();
+                listRecipe.addAll(databaseHelper.getAllRecipe());
 
+                for ( int i = 0 ; i < listFavorite.size(); i++) {
+                    listFavoriteName.add(listFavorite.get(i).getRecipe_title());
+                }
                 return null;
             }
             @Override
@@ -67,7 +74,7 @@ public class FavoriteActivity extends Activity {
 
         FavoriteListView = (SwipeMenuListView) findViewById(R.id.FavoriteList);
 //        adapter1 = new ArrayAdapter(this, android.R.layout.simple_list_item_1, FAVORITE_LIST);
-        adapter1 = new ArrayAdapter(this, android.R.layout.simple_list_item_1, databaseHelper.getAllFavorite());
+        adapter1 = new ArrayAdapter(this, android.R.layout.simple_list_item_1, listFavoriteName);
         FavoriteListView.setAdapter(adapter1);
 
         SwipeMenuCreator creator = new SwipeMenuCreator() {
@@ -128,12 +135,29 @@ public class FavoriteActivity extends Activity {
                 switch (index) {
                     case 0:
                         Log.d(TAG, "Open Button Execute");
-                        goList();
+                        Intent intent = new Intent(activity, RecipeDetailActivity.class);
+                        for ( int i = 0 ; i < listRecipe.size(); i++) {
+                            if ( listRecipe.get(i).getTitleText().equals(listFavoriteName.get(position))){
+                                intent.putExtra("title", listRecipe.get(position).getTitleText());
+                                intent.putExtra("ingredient", listRecipe.get(position).getIngredientsText());
+                                intent.putExtra("summary", listRecipe.get(position).getSummaryText());
+                                intent.putExtra("steps", listRecipe.get(position).getSteps());
+                                break;
+                            }
+                        }
+                        startActivity(intent);
 
                         break;
                     case 1:
                         Log.d(TAG, "Close button Execute");
 //                        FAVORITE_LIST.remove(position);
+                        for ( int i = 0 ; i < listRecipe.size(); i++) {
+                            if ( listRecipe.get(i).getTitleText().equals(listFavoriteName.get(position))){
+                                listRecipe.get(i).setIsFavorite(0);
+                                databaseHelper.updateRecipe(listRecipe.get(i));
+                                break;
+                            }
+                        }
                         databaseHelper.deleteFavorite(listFavorite.get(position));
                         adapter1.notifyDataSetChanged();
                         recreate();
