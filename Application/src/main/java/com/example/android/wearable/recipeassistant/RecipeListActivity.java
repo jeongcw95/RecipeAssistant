@@ -30,6 +30,7 @@ public class RecipeListActivity extends AppCompatActivity {
     private databaseHelper databaseHelper;
     public AppCompatButton Modify;
     public AppCompatButton Delete;
+    public static boolean isClicked = false;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -38,10 +39,12 @@ public class RecipeListActivity extends AppCompatActivity {
         initViews();
         initObjects();
     }
+
     protected void onRestart(){
         super.onRestart();
         recreate();
     }
+
     /**
      * This method is to initialize views
      */
@@ -106,8 +109,19 @@ public class RecipeListActivity extends AppCompatActivity {
         intent.putExtra("steps", RecipeRecyclerAdapter.R_position.getSteps());
         startActivity(intent);
     }
+
     public void recipeDeleteClicked(View view){
         databaseHelper.deleteRecipe(RecipeRecyclerAdapter.R_position);
         recreate();
     }
+
+    public void FavoriteClicked(View view){
+        Toast.makeText(this, "WHAT THE FUCK", Toast.LENGTH_LONG).show();
+    }
+
+    private void goDetail(){
+        Intent intent = new Intent(this, RecipeDetailActivity.class);
+        startActivity(intent);
+    }
+
 }

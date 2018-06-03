@@ -1,6 +1,7 @@
 package com.example.android.wearable.recipeassistant;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.RecyclerView;
@@ -21,8 +22,8 @@ class RecipeViewHolder extends RecyclerView.ViewHolder implements View.OnClickLi
     private ItemClickListener itemClickListener;
     public AppCompatButton Modify;
     public AppCompatButton Delete;
-    public String title_name;
-
+    public AppCompatButton Favorite;
+    public static View RecipeView;
     public RecipeViewHolder(View view) {
         super(view);
 
@@ -34,7 +35,8 @@ class RecipeViewHolder extends RecyclerView.ViewHolder implements View.OnClickLi
         textViewSteps = (AppCompatTextView) view.findViewById(R.id.recipeTextSteps);
         Modify = (AppCompatButton) view.findViewById(R.id.recipeModifyButton);
         Delete = (AppCompatButton) view.findViewById(R.id.recipeDeleteButton);
-
+        Favorite = (AppCompatButton) view.findViewById(R.id.recipeFavoriteButton);
+        RecipeView = view;
     }
     public void setItemClickListener(ItemClickListener itemClickListener){
         this.itemClickListener = itemClickListener;
@@ -44,6 +46,8 @@ class RecipeViewHolder extends RecyclerView.ViewHolder implements View.OnClickLi
     @Override
     public void onClick(View v) {
         itemClickListener.onClick(v, getAdapterPosition(), false);
+
+
         if(Modify.getVisibility() == v.GONE) {
             Modify.setVisibility(v.VISIBLE);
         } else {
@@ -54,7 +58,16 @@ class RecipeViewHolder extends RecyclerView.ViewHolder implements View.OnClickLi
         } else {
             Delete.setVisibility(v.GONE);
         }
-
+        if(Favorite.getVisibility() == v.GONE) {
+            Favorite.setVisibility(v.VISIBLE);
+        } else {
+            Favorite.setVisibility(v.GONE);
+        }
+/*
+        Context context = v.getContext();
+        Intent intent = new Intent(context, RecipeDetailActivity.class);
+        context.startActivity(intent);
+*/
     }
 
     @Override
@@ -68,8 +81,6 @@ class RecipeViewHolder extends RecyclerView.ViewHolder implements View.OnClickLi
 
 
 public class RecipeRecyclerAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
-
-
 
     protected Context context;
     private List<Recipe> listRecipe;
@@ -107,13 +118,23 @@ public class RecipeRecyclerAdapter extends RecyclerView.Adapter<RecipeViewHolder
             public void onClick(View view, int position, boolean isLong) {
                 R_position = listRecipe.get(position);
                 if (isLong) {
+                    Context context = view.getContext();
+                    Intent intent = new Intent(context, RecipeDetailActivity.class);
+                    intent.putExtra("title", listRecipe.get(position).getTitleText());
+                    intent.putExtra("ingredient", listRecipe.get(position).getIngredientsText());
+                    intent.putExtra("summary", listRecipe.get(position).getSummaryText());
+                    intent.putExtra("steps", listRecipe.get(position).getSteps());
+                    context.startActivity(intent);
+
+                    /*
                     Toast.makeText(context, "즐겨찾기에 추가되었습니다", Toast.LENGTH_LONG).show();
-//                    FavoriteActivity.FAVORITE_LIST.add(R_position.getTitleText());
+//                  FavoriteActivity.FAVORITE_LIST.add(R_position.getTitleText());
                     listRecipe.get(position).setIsFavorite(1);
                     databaseHelper.updateRecipe(listRecipe.get(position));
                     favorite.setUser_id(user.getId());
                     favorite.setRecipe_title(String.valueOf(R_position.getTitleText()));
                     databaseHelper.addFavorite(favorite);
+                    */
                 }
                 else{
                     // Toast.makeText(context, "Short touch", Toast.LENGTH_LONG).show();
